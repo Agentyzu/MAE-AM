@@ -16,27 +16,14 @@ This system demonstrates its capability to balance query relevance and advertise
 ```
 MAE-AM/
 ├── auction/                    # Auction mechanism implementations
-│   ├── GA.py                   # Genetic algorithm for auction optimization
-│   ├── GSP.py                  # Generalized second-price auction mechanism
-│   ├── GSP_QA.py               # Query-adjusted GSP mechanism
-│   ├── Prom.py                 # Prompt-based auction mechanism
-│   └── Prom.DSIC.py            # Prompt-based DSIC auction mechanism
 ├── cfgs/                       # Configuration files
 ├── dataset/                    # Dataset files
-│   ├── ADGEN/                  # ADGEN dataset directory
-│   └── ATVI/                   # ATVI dataset directory
 ├── LLMs/                       # Large Language Model utilities
 ├── model_zoo/                  # Pretrained models and weights
 ├── plot/                       # Visualization scripts
 ├── run_ADGEN/                  # Scripts for ADGEN experiments
 ├── run_ATVI/                   # Scripts for ATVI experiments
 ├── utils/                      # Utility scripts
-│   ├── base_llm.py             # Base functionality for LLMs
-│   ├── calculate_sim.py        # Similarity calculation utilities
-│   ├── data_process.py         # General data processing functions
-│   ├── LLMProcess.py           # LLM-specific processing logic
-│   ├─ processing_data_ADGEN.py # run ADGEN dataset
-│   └── processing_data_ATVI.py # run ATVI dataset
 └── README.md                   # Project documentation
 ```
 
