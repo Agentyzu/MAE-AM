@@ -2,9 +2,9 @@ import json
 import os
 import pandas as pd
 
-# name = ['jacket', 'skirt', 'trousers']
-source_dir = r"dataset\ATVI"
-name = [n for n in os.listdir(source_dir) if os.path.isdir(os.path.join(source_dir, n))]
+name = ['jacket', 'skirt', 'trousers']
+# source_dir = r"dataset\ATVI"
+# name = [n for n in os.listdir(source_dir) if os.path.isdir(os.path.join(source_dir, n))]
 
 baselines = ['Prom']
 # baselines = ['GA', 'GSP', 'GSP_SQA', 'Prom_ALS', 'Prom_AAL']
@@ -12,7 +12,7 @@ llms = ['ChatGPT', 'claude', 'ernie', 'GLM', 'kimi', 'Qwen']
 
 for baseline in baselines:
     for i in range(10):
-        for j in range(14):
+        for j in range(len(name)):
             ad_sw, ad_rev, ad_utility, user_satis, ad_satis, score = [[] for _ in range(6)]
             llm_ls = []
             for llm in llms:
@@ -29,7 +29,7 @@ for baseline in baselines:
                         ad_satis.append(data['ad_satis'])
                         score.append(data['score'])
 
-            output_dir = f'C:/Users/lenovo/Desktop/demo/tasks_atvi/s-t2/result_{baseline}/{name[j]}_section{i + 1}'
+            output_dir = f'/tasks_atvi/s-t2/result_{baseline}/{name[j]}_section{i + 1}'
             if os.path.exists(output_dir):
                 table_data = {
                     "ad_sw": ad_sw,
@@ -55,8 +55,7 @@ for baseline in baselines:
     all_means = []
     for i in range(10):
         for j in range(14):
-            table_path = (f'C:/Users/lenovo/Desktop/demo/tasks_atvi/s-t2/result_{baseline}/'
-                          f'{name[j]}_section{i + 1}/{name[j]}_section{i + 1}_table.xlsx')
+            table_path = (f'tasks_atvi/s-t2/result_{baseline}/{name[j]}_section{i + 1}/{name[j]}_section{i + 1}_table.xlsx')
 
             if os.path.exists(table_path):
                 df = pd.read_excel(table_path, index_col=0)
@@ -66,5 +65,3 @@ for baseline in baselines:
     df_means = pd.DataFrame(all_means)
     final_mean = df_means.mean()
     final_var = df_means.var()
-    print(final_mean)
-    print(final_var)

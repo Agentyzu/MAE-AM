@@ -4,15 +4,20 @@ from utils.calculate_sim import sim
 
 
 class Base_LLM(object):
+    """
+    A base class for implementing LLM-based advertisement integration.
+    """
     def __init__(self, config, data, auc_alg):
         self.data = data
         self.query = config.query
 
+        # Extracting advertisement data
         self.ad_name = [entry['ad_name'] for entry in data]
         self.pctr = [entry['pctr'] for entry in data]
-        self.content = [entry['content'] for entry in data]
-        # self.content = [entry['ad_copy'] for entry in data]
+        self.content = [entry['content'] for entry in data]    # ADGEN dataset
+        # self.content = [entry['ad_copy'] for entry in data]  # ATVI dataset
 
+        # Configuration parameters
         self.q = config.q
         self.constant = config.constant
         self.max_len = config.max_len
@@ -20,6 +25,7 @@ class Base_LLM(object):
         self.theta_1 = config.theta_1
         self.theta_2 = config.theta_2
         self.pos_norm = np.array([0.9 ** (k + 1) for k in range(self.q)])
+
         self.messages = []
         self.auc_alg = auc_alg
         self.basic_reply = None
@@ -29,8 +35,12 @@ class Base_LLM(object):
         self.b = None
 
     def calculate_similar(self, answer):
+        """
+        Calculates the similarity between a generated response and each advertisement's content.
+        """
         n = len(self.content)
         similar = np.zeros(n)
+
         for i in tqdm(range(n)):
             words1 = answer.replace('\n', ' ').split()
             if len(words1) > 50:
@@ -42,15 +52,21 @@ class Base_LLM(object):
 
             similar[i] = sim(answer, self.content[i])
 
-        similar = np.random.rand(n)
-        self.b = similar
+        # Simulated similarity for testing
+        self.b = np.random.rand(n)
 
     def generate_b(self):
+        """
+        Generates random bids for advertisements.
+        """
         n = len(self.content)
         b_hat = np.random.uniform(0.2, 0.8, size=n)
         return b_hat
 
     def ad_gen_chinese(self):
+        """
+        Generates an advertisement-embedded response in Chinese, either structured or integrated.
+        """
         if self.is_structured:
             prompt = (
                 f"用户提问: \"{self.query}\"。请基于已经生成的基础回复来回答问题，并在基础回复中自然地融入广告推荐。\n"
@@ -140,6 +156,9 @@ class Base_LLM(object):
         return self.compressed_ad
 
     def ad_gen_english(self):
+        """
+        Generates a structured Chinese advertisement list with compressed content.
+        """
         if self.is_structured:
             prompt = (
                 f"User question: \"{self.query}\". Please respond based on the pre-generated basic response, naturally incorporating advertisement recommendations into it.\n"
@@ -261,6 +280,9 @@ class Base_LLM(object):
         return self.compressed_ad
 
     def satisfaction(self):
+        """
+        Evaluates user satisfaction and advertisement satisfaction based on similarity and utility metrics.
+        """
         def truncate_text(text, max_words):
             words = text.replace('\n', ' ').split()
             return ' '.join(words[:max_words]) if len(words) > max_words else ' '.join(words)
@@ -280,9 +302,15 @@ class Base_LLM(object):
         self.score = self.theta_1 * self.user_satis + (1 - self.theta_1) * self.ad_satis + self.theta_2 * self.SW
 
     def reply(self, query):
+        """
+        Abstract method for generating replies to user queries.
+        """
         raise NotImplementedError
 
     def auction(self):
+        """
+        Executes the auction algorithm to allocate ad slots based on given parameters.
+        """
         len_content = [len(ads) for ads in self.content]
         self.sigma, self.prom, self.payments, self.utilities, self.SW = self.auc_alg(self.b, self.pctr, self.pos_norm,
                                                                                      self.q, self.constant, len_content,
@@ -290,7 +318,9 @@ class Base_LLM(object):
         self.ad_len = [int(self.max_len * p) for p in self.prom]
 
     def auction_DSIC(self, beta, s):
-        # s表示哪个广告商谎报
+        """
+        Executes a DSIC-compliant auction where one advertiser misreports their preferences.
+        """
         len_content = [len(ads) for ads in self.content]
         self.sigma, self.prom, self.payments, self.utilities, self.SW = self.auc_alg(self.b, self.pctr, self.pos_norm,
                                                                                      self.q, self.constant, len_content,

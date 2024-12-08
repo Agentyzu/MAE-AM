@@ -1,11 +1,22 @@
 import requests
 import json
 
-API_KEY = "rQE5GNdWQk3OVqphsp4M3s6o"
-SECRET_KEY = "P54tQPixbmdhACqrsoRIPFoMyM2duP01"
+# Constants for API credentials
+API_KEY = ""       # API_KEY
+SECRET_KEY = ""    # SECRET_KEY
 
 
 def sim(text1, text2):
+    """
+    Calculates the similarity score between two texts using the Baidu NLP API.
+
+    Args:
+        text1 (str): The first text to compare.
+        text2 (str): The second text to compare.
+
+    Returns:
+        float: The similarity score between the two texts.
+    """
     url = "https://aip.baidubce.com/rpc/2.0/nlp/v2/simnet?charset=UTF-8&access_token=" + get_access_token()
     payload = json.dumps({
         "text_1": text1,
