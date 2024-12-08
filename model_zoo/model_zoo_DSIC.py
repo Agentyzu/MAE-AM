@@ -11,7 +11,7 @@ from LLMs.being import being
 
 from auction.Prom_DSIC import Prom_DSIC
 
-from LLMProcess import LLMProcess
+from utils.LLMProcess import LLMProcess
 
 
 class ModelZoo_DSIC:
@@ -44,7 +44,7 @@ class ModelZoo_DSIC:
 
     def run_all_models(self):
         for llm_name, llm_process in self.llms.items():
-            print(f"运行模型 {llm_name}:")
+            print(f"Run model {llm_name}:")
             llm_process.run_DSIC()
             # print(llm_process.result)
             self.package_results(llm_process.result, llm_name)
@@ -65,16 +65,16 @@ class ModelZoo_DSIC:
 
     def run_model(self, llm_name):
         if llm_name in self.llms:
-            print(f"运行模型 {llm_name}:")
-            self.llms[llm_name].run_DSIC()
+            print(f"Run model {llm_name}:")
+            self.llms[llm_name].run_sqa()
         else:
-            print(f"模型 {llm_name} 不在模型库中。")
+            print(f"LLM {llm_name} not in model zoo")
 
     def add_model(self, llm_name):
         if llm_name not in self.llms:
             self.llms[llm_name] = LLMProcess(self.available_llms[llm_name], self.cfg, self.data, self.auc_alg)
         else:
-            print(f"模型 {llm_name} 已经存在了.")
+            print(f"Model {llm_name} exists.")
 
     def list_models(self):
         return list(self.llms.keys())

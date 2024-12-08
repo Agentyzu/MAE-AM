@@ -31,5 +31,4 @@ def GSP_SQA(b, pctr, pos_norm, q, constant, len_content, max_len):
         if Prom[k] != 0.01:
             SW += b[sigma[k]] * pctr[sigma[k]] * pos_norm[k] * (np.log(Prom[k]) + constant)
 
-
     return sigma, Prom, payments, utilities, SW

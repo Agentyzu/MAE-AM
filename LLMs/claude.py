@@ -1,4 +1,4 @@
-from base_llm import Base_LLM
+from utils.base_llm import Base_LLM
 from openai import OpenAI
 
 

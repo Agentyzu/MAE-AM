@@ -11,7 +11,7 @@ from LLMs.being import being
 
 from auction.Prom import Prom
 
-from LLMProcess import LLMProcess
+from utils.LLMProcess import LLMProcess
 
 
 class ModelZoo_AAL:
@@ -47,21 +47,18 @@ class ModelZoo_AAL:
         best_model = None
 
         for llm_name, llm_process in self.llms.items():
-            print(f"运行模型 {llm_name}:")
+            print(f"Run model {llm_name}:")
             llm_process.run_aal()
             # print(llm_process.result)
             self.package_results(llm_process.result, llm_name)
 
-            # 输出模型的分数
-            print(f"大模型{llm_name}的分数为: {llm_process.result['score']}")
+            print(f"The score of {llm_name} : {llm_process.result['score']}")
 
-            # 记录最高分模型
             if llm_process.result['score'] > highest_score:
                 highest_score = llm_process.result['score']
                 best_model = llm_name
 
-            # 打印最高分的模型名称
-        print(f"最高分数的模型是{best_model}，分数为{highest_score}")
+        print(f"{best_model} with the highest score {highest_score}")
 
     def package_results(self, result, llm_name):
         result_dir = f'result_{self.cfg["auc"]}'
@@ -79,16 +76,16 @@ class ModelZoo_AAL:
 
     def run_model(self, llm_name):
         if llm_name in self.llms:
-            print(f"运行模型 {llm_name}:")
-            self.llms[llm_name].run_aal()
+            print(f"Run model {llm_name}:")
+            self.llms[llm_name].run_sqa()
         else:
-            print(f"模型 {llm_name} 不在模型库中。")
+            print(f"LLM {llm_name} not in model zoo")
 
     def add_model(self, llm_name):
         if llm_name not in self.llms:
             self.llms[llm_name] = LLMProcess(self.available_llms[llm_name], self.cfg, self.data, self.auc_alg)
         else:
-            print(f"模型 {llm_name} 已经存在了.")
+            print(f"Model {llm_name} exists.")
 
     def list_models(self):
         return list(self.llms.keys())

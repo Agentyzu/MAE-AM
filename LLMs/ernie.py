@@ -1,6 +1,6 @@
 import os
 import qianfan
-from base_llm import Base_LLM
+from utils.base_llm import Base_LLM
 
 
 class ernie(Base_LLM):

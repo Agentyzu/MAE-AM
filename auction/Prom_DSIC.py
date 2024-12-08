@@ -7,7 +7,6 @@ def Prom_DSIC(b, pctr, pos_norm, q, constant, len_content, max_len, beta, s):
     Prom = np.zeros(q)
     ecpm_k = np.zeros(q)
 
-    # 对第s个人进行谎报处理,s=1,2,3,4
     b_hat = copy.deepcopy(b)
     b_hat[sigma[s]] = b[sigma[s]] * beta
 

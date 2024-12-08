@@ -1,7 +1,7 @@
 import json
 import os
 from openai import OpenAI
-from base_llm import Base_LLM
+from utils.base_llm import Base_LLM
 
 
 class Qwen(Base_LLM):

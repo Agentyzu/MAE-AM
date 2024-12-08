@@ -1,5 +1,5 @@
 from zhipuai import ZhipuAI
-from base_llm import Base_LLM
+from utils.base_llm import Base_LLM
 
 
 class GLM(Base_LLM):
