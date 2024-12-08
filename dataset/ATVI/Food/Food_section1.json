@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Lipton",
+        "pctr": 0.4848438398235986,
+        "ad_copy": "Good cooks know there's always one ingredient that makes a recipe great. Recipe Secrets. LIPTON RECIPE SECRETS. The secret good cooks know."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Frito Lay",
+        "pctr": 0.3687544575418127,
+        "ad_copy": "Frito Lay. Good Fun."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Campbell's",
+        "pctr": 0.3681389490532953,
+        "ad_copy": "With Campbell's tomato soup, your mouth'll be psyched! Campbell's tomato soup. M'm M'm Good!"
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Kashi",
+        "pctr": 0.3766345674334065,
+        "ad_copy": "Kashi. 7 whole grains on a mission."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Quaker",
+        "pctr": 0.45947004885911386,
+        "ad_copy": "Oat. Meal. With all of a bowl of instant oatmeal, see why these Quaker Oatmeal Breakfast Squares are so filling. It'll be something to smile about."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Mountain Dew",
+        "pctr": 0.4680927785458545,
+        "ad_copy": "No matter who you are, everybody's got a little diet dew in them. So don't hold back - do the diet dew."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Pepperidge Farm",
+        "pctr": 0.45244723004869847,
+        "ad_copy": "Keeping an eye on the trans fat in your family's diet? Goldfish crackers have zero grams per serving. The snack that smiles back."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Frangelico",
+        "pctr": 0.35849426029646186,
+        "ad_copy": "Forbidden pleasures are frequently the most enjoyable. Frangelico. The original hazelnut liqueur."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "Balance Bar",
+        "pctr": 0.4872048008683542,
+        "ad_copy": "You know that tired feeling you get at 5 pm? Neither do we. BALANCE BAR. For energy that lasts."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Wheat Thins",
+        "pctr": 0.33204452268149137,
+        "ad_copy": "Too good to put down. Tastes good. Feels good. Wheat Thins."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Nuts",
+        "pctr": 0.4187897894939692,
+        "ad_copy": "Nuts -- the fun food. Now that nut prices are down, buy them in quantity. And turn your home into a real nut house. NUTS -- the fun food."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "Oscar Mayer Bacon",
+        "pctr": 0.42288348876595827,
+        "ad_copy": "Pacific Trail. Fitness Collection for Women. Keep the weight of the world where it belongs. Beneath your feet."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Honey Nut Cheerios",
+        "pctr": 0.3453893888026508,
+        "ad_copy": "Honey Nut Cheerios. Just let it pour. Nobody can say no to Honey Nut Cheerios."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Pillsbury",
+        "pctr": 0.48340690892320193,
+        "ad_copy": "Hey. You know the really cool thing about being a grown up? You can order pizza hut pizza...whenever you feel like it."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "Kix Cereal",
+        "pctr": 0.41306335446240405,
+        "ad_copy": "Kids are always learning, always growing. That's why Kix cereal supports PBS and Clifford for helping kids to feed their curious appetites."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Flaming Salsa",
+        "pctr": 0.43114488672399687,
+        "ad_copy": "I was fed up with products claiming they were \"Insanely Spicy,\" or \"Extra Extra Hot!\" until I tried new Flaming Salsa. IT'S HOT!! Flaming hot."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Tropicana",
+        "pctr": 0.45481743498763094,
+        "ad_copy": "The blend is exhilarating. Like a welcoming burst of cool sensations. It's delicious. Tropicana Blends 100 % juice."
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Kellogg's",
+        "pctr": 0.3796153914067812,
+        "ad_copy": "Kellogg's Special K - Looking good never tasted so great."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Tabasco",
+        "pctr": 0.4381166880338453,
+        "ad_copy": "All of the other flavors secretly refer to it as the Italian stallion. Tabasco Garlic Pepper Sauce. Tabasco.com."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Big Red",
+        "pctr": 0.38001812916313904,
+        "ad_copy": "We know what you're thinking. Here's what you should be chewing. Long lasting fresh breath - it looks good on you -Big Red"
+    }
+]

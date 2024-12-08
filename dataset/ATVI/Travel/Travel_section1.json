@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Northport Inn",
+        "pctr": 0.44983337711340954,
+        "ad_copy": "Introducing a twist you can't resist. With two luscious flavors twisted into one great soft-baked crust. Good food to go. Kellogg's NutriGrain Twists."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Miami Travel Promotion",
+        "pctr": 0.3513323048316494,
+        "ad_copy": "For those with a discriminating palate, the perfect reason to visit Miami is the new, highly acclaimed and glamorous South Beach Wine and Food Festival. Devoted to all things flavorful."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Quality Inn",
+        "pctr": 0.40429888282295334,
+        "ad_copy": "When he checked in, he was Mr. Simmons. When he checked out, he was just plain Bob. Quality Inn. We'll see you there."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "South Pacific",
+        "pctr": 0.3511102296865781,
+        "ad_copy": "Take a trip to where the vibrant indigenous culture merges with a triumphant historical ambience. Discover the magic of the South Pacific in Ecuador."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Quantum of the Seas",
+        "pctr": 0.3565188449905208,
+        "ad_copy": "Hails from the future\nSails from the Big Apple\nThis is the ship that changes everything\nIntroducing Royal Caribbean's new Quantum of the Seas\nCall now to change the way you vacation forever"
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Doubletree",
+        "pctr": 0.40278962559227616,
+        "ad_copy": "Hotel Points and Airline Miles? Earn both with every stay at Doubletree and enjoy true comfort, respect, and a warm cookie at check-in. Doubletree, a member of the Hilton Family of Hotels."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Sandals",
+        "pctr": 0.3669058930899441,
+        "ad_copy": "What's your mood?...13 Luxury Included resorts...4 Exotic Islands...ONE unforgettable experience...Sandals-The Luxury Included vacation...Call 1-800-Sandals or visit Sandals.com"
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Expedia",
+        "pctr": 0.47462164943961294,
+        "ad_copy": "Hmmm. Search for ------ Yeah. Find it. Book it. Easy. Expedia.com. Don't just travel -Travel right."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "Disney Travel",
+        "pctr": 0.3079047416543658,
+        "ad_copy": "There is a place... where dreams come true... Explore your dreams. The Year of a Million Dreams. Extended through 2008. Because some dreams don't have to end."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "City of Boston",
+        "pctr": 0.34197440425428305,
+        "ad_copy": "Hat's off to you Boston!\nFor showing everyone\nWhat it means to be a Yankee!\nContributed by Richurd"
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Ritz Carlton",
+        "pctr": 0.39591315379093533,
+        "ad_copy": "The mind.\nThe body.\nThe soul.\nAnd a place where you can renew all three.\nThe Ritz Carlton. Jamaica"
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "Renaissance Hotels",
+        "pctr": 0.4684824338221501,
+        "ad_copy": "At the heart of the most extraordinary places, you'll find the most extraordinary hotels. Renaissance Hotels and Resorts."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Alaska Airlines",
+        "pctr": 0.4427863298340263,
+        "ad_copy": "At Alaska Airlines, you'll never fight for a seat. Maybe that's because we give you one when you book your flight. Check-out the selection of seats and low fairs at alaskaair.com"
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Orient Express",
+        "pctr": 0.34594132786467097,
+        "ad_copy": "Journeys of distinction. A tradition from the past designed for the traveler of today. Please contact your travel agent or nearest ORIENT EXPRESS reservations office."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "American Airlines",
+        "pctr": 0.38529166701471806,
+        "ad_copy": "250 cities. 40 countries. One airline. American Airlines."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Breakstone's Cottage Doubles",
+        "pctr": 0.4635008916544773,
+        "ad_copy": "Half the sugar of yogurt (ain't that sweet). A smart snack of creamy cottage cheese with real fruit topping that's an excellent source of protein. Breakstone's Cottage Doubles."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Disney Cruise Line",
+        "pctr": 0.49699003632953803,
+        "ad_copy": "Escape on a fantasy unlike anything you've ever imagined. A Disney Cruise Line Vacation. Start planning today and set sail on a dream."
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Hertz",
+        "pctr": 0.32602211751279453,
+        "ad_copy": "At Hertz, you can rely on us to get you in your car and on your way without ever missing a beat.. Hertz. We're here to get you there."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Priceline.com",
+        "pctr": 0.3801562710028847,
+        "ad_copy": "These 3 people are staying at the same 3 star hotel-in identical rooms. But one of them is paying 40% less. Can you guess who? Top of the line,guaranteed best price. Priceline Hotels."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Club Med",
+        "pctr": 0.4247598689499776,
+        "ad_copy": "Imagine for a moment ... nothing. No clocks. No ringing phone. And no crowds. A Club Med vacation is like none other."
+    }
+]

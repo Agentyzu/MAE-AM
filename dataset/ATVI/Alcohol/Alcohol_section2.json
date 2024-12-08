@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Miller Lite",
+        "pctr": 0.30743216719721644,
+        "ad_copy": "Hang on now. I'm drinking a light beer that I can actually taste.\nThe bartender just called me sir...\nMy shoes aren't sticking to the floor...\nNobody's yelling over anybody else...\nAnd for whatever reason I'm positive I'm taking that smokin' hot brunette home with me tonight.\nRight...because she's my wife.\nWhoa...when did I become a grown up?"
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "James Boag Beer",
+        "pctr": 0.40845529809488273,
+        "ad_copy": "These pure waters are special. Something goes in there, comes out different. Good different. Oh! sure. Things don't always turn out the way you expect. But whose complaining? Because this water just makes things better. James Boag beer from the pure waters of Tasmania."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Miller Lite",
+        "pctr": 0.41187218546620463,
+        "ad_copy": "Today Luncheon meats are made my many, Bar-S has the best. All meat, no fillers, we aspire to be your sandwich headquarters when it comes to ham, smoked sausage, bacon, bologna and salami. And in Todays market we use Beef, Pork, Turkey and Chicken in various products. Check out your local stores and just ask for Bar-S.\nTHE BAR-S INVASION HAS BEGUN..."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Jack Daniel's",
+        "pctr": 0.3369844150635294,
+        "ad_copy": "Giving the right gift is easy. Just follow these simple steps.\nFirst, pick up a bottle of Jack Daniel's Tennessee Whiskey.\nNow, the size ya choose depends on who it's for. Say, your boss, a friend or a brother.\nSecond, get some wrapping paper and ribbon. It's kinda like wrappin' a tennis racket. They're gonna know what it is, but that's part of the charm.\nAnd last, and most important, step three. Be there when they open it."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Miller Brewing Company",
+        "pctr": 0.39514385274756897,
+        "ad_copy": "Miller Genuine Draft is cold-filtered at a constant 32 degrees. What's left is pure beer that hasn't had its flavor heated away. Only cold-filtering gives you a taste this pure, this refreshing. Cold-filtered Miller Genuine Draft. Life is better cold filtered."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Heineken",
+        "pctr": 0.486388063017955,
+        "ad_copy": "Heineken Handlebar Mustache :30\nThe handlebar mustache. It's not right for every occasion. Unless, that is, you find yourself drafted into an old-timey bare knuckle boxing match...\nthere are some things best saved for the right occasion. But then, they make those occasions even righter.\nJust like, under every handlebar mustache there's a little Heineken light.\nHeineken. Open your world."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Dewar's",
+        "pctr": 0.47879311636873295,
+        "ad_copy": "What's in a name? In a word, standards. At Dewar's we've made quite a name for ourselves by living true to our standards for over 130 years. That's about how long we have been double ageing our whisky.\nWhy? For extra smoothness.\nIt takes longer and costs more but ageing, blending and ageing again is the gold standard when it comes to marrying forty different single malts and grains into one super smooth Dewar's."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Sam Adams",
+        "pctr": 0.35572260716811166,
+        "ad_copy": "No matter how hard you try, you can not twist off the bottle cap of a Sam Adams. All that Sam Adams flavor is locked beneath a twenty one crimp bottle cap. So you'll need a bottle cap opener to get at it...at the very least. Sam Adams, a better glass of beer."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "Corona Refresca",
+        "pctr": 0.3367510365598675,
+        "ad_copy": "Corona Refresca brings the flavor and the feeling of the tropics straight to you. Crisp, flavorful, and never too sweet, Corona Refresca is a new premium, alcohol-spiked refresher, available in Passionfruit Lime, Guava Lime and Coconut Lime.\nCorona Refresca. Bring the tropics."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Miller Brewing Company",
+        "pctr": 0.4301745609792566,
+        "ad_copy": "There's a secret society, where the night is eternal, the music is essential, and the party is non-stop. You could be the newest member. The Miller Genuine Draft music jet tour. Four parties, four cities, one unforgettable trip. Peel the label, enter the code at mgd.com and prepare for take-off."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Anheuser-Busch",
+        "pctr": 0.3958221805495449,
+        "ad_copy": "These are our kids. And just like your kids, it seems what we tell them goes in one ear and out the other. But guess what! When it comes to making a tough decision like whether or not to drink, kids say parents have more influence than anyone. So talk to your kids. Let's work together to stop underage drinking before it starts."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "Jose Cuervo",
+        "pctr": 0.4401753598091267,
+        "ad_copy": "If you were to attend a party...with all of history's most influential people...the creators...the innovators....the pioneers....You'd notice a common theme.\nBut if you had to choose one mother or father to throw such a party...it would have to be...the father of tequila.\nCuervo Tradicional...\nSince 1795....The original, 100% agave tequila."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Coors",
+        "pctr": 0.47284975129723095,
+        "ad_copy": "Most brewers have figured out that beer and cold go hand in hand. Still, we're the only ones who bother to ship our beer cold. In the mountains, our brew water even comes out of the ground cold. So, while others have been warming up to the idea of cold, up here, we're kinda stuck with it. Cold, clean, original COORS ... cause ya' feel like it."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Anheuser-Busch",
+        "pctr": 0.3714175413789329,
+        "ad_copy": "Two American Icons are joining forces...a century in the making\nBudweiser and Jim Beam introduce, the Budweiser Reserve Copper Lager\nA rich lager aged on Jim Beam bourbon barrel staves\nWith hints of vanilla and caramel rye\nfollowed by a deliciously smooth finish\nBudweiser Reserve"
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "Thunderbird Wine",
+        "pctr": 0.31536155203792526,
+        "ad_copy": "I like the unusual flavor of Thunderbird Wine\nIt's an exceptionally good drink for every occaision\nThunderbird has an unusual flavor all it's own\nNot quite like anything I've ever tasted\nI suggest you try Thunderbird, It's truly delightful\nContributed by Richurd"
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Sam Adams",
+        "pctr": 0.3465658337194877,
+        "ad_copy": "At Sam Adams we salute those people who did that thing, built that thing, tried that thing, messed that thing up, then tried it again. For all the people who believe in going for it, failing, improving, who do their thing the same way we do ours. Because life isn't about whether your glass is half full or half empty; it's about filling it up. Sam Adams, fill your glass."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Courvoisier",
+        "pctr": 0.3079053401756986,
+        "ad_copy": "Aged in French Oak barrels to give you the superb complexity and finesse that a true cognac should possess. With fruity hints of orange, apricot, and pear, and deep soulful aromas, of chocolate, vanilla and amber, it's clear why Courvoisier has been the cognac of choice for nearly 200 years."
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Beer Story",
+        "pctr": 0.4905872721696773,
+        "ad_copy": "Next time you order a pint, you'll find you taste something that isn't in the recipe.\nIt doesn't come from the hops. Or the two-row malted barley.\nWe like to call it character.\nIt's hard to define but easy to recognize.\nYou find it in great men. And great beers."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Johnny Walker",
+        "pctr": 0.4492032893160218,
+        "ad_copy": "The familiar Square bottle. The Label at an angle of precisely 24 degrees. The iconic sketch of a striding Edwardian Dandy. Red, Black, Green, Gold. And now, the grandest of them all. The Blue Label. Johnnie Walker. Keep Walking.\n__________________\nscript by jamesromick"
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Smirnoff",
+        "pctr": 0.34663145283316477,
+        "ad_copy": "We look at time differently. Not as a luxury, but as an essential ingredient. The purest waters and barleys. Small barrel distilling. Signature oak casks. And time.\nThe essentials to crafting \"The Macallan\". Two centuries of experience has taught us, you can't rush perfection."
+    }
+]

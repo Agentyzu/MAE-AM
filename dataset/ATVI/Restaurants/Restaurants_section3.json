@@ -1,0 +1,74 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Taco Bell",
+        "pctr": 0.4183532641716483,
+        "ad_copy": "\"Deja food. The eerie feeling your having the same food at every group event. Because... you are. But now, there's a cure.\nWhatever your occasion, mix things up with twelve delicious tacos in one box. Taco Bell party packs, party food will never be the same.\""
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Ferrara",
+        "pctr": 0.3655840294631371,
+        "ad_copy": "Ferrara. America's first espresso bar since 1892, in the heart of Little Italy. Open daily, 8.00am to midnight. Serving continental coffees, pastries and desserts, assorted gelati and after-dinner drinks. 195 Grand Street, NY City call 212-226-6115."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Pret a Manger",
+        "pctr": 0.34108272390785976,
+        "ad_copy": "Eat Soup, Feel Good. A traditional stock and chunky-chopped ingredients cooked in small batches in an old-fashioned kettle. Pret soups are freshly made (never frozen), with absolutely no stabilizers, additives, preservatives or colors....What's not to love?"
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Long John Silver's",
+        "pctr": 0.399919658326522,
+        "ad_copy": "When it comes to eating out, there's a nice little place in town. You might even miss it, 'cause it's not one of those flashy glass and neon places. It's, well, it's different. Serves real meals at prices that are hard to believe these days. LONG JOHN SILVER'S. Come on in."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "McDonald's",
+        "pctr": 0.4548079230967249,
+        "ad_copy": "How to get no kick from Champagne. Meier's All-Natural sparkling juices contain no alcohol and no added sugar. Choose from nine crisp, bubbly flavors, and give any occasion a natural sparkle. MEIER'S. For a natural life."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Starbucks",
+        "pctr": 0.41943444140032976,
+        "ad_copy": "When Starbucks creamer meets your morning coffee, your favorite Starbucks flavors come to life. Smooth, bold, creamy. Inspired by the Starbucks Caramel Macchiato you love. Mornings just got better. This changes everything. New Starbucks creamer. Now at home."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Pizza Hut",
+        "pctr": 0.3599304732014411,
+        "ad_copy": "America wants more. So Planter's is giving you more. New Planter's Nuts N' More. Delicious fruit. Chocolate chips. Sesame sticks. America...you wanted it?...you got it. New fresh-roasted PLANTER'S NUTS N' MORE. More than you ever dreamed of ... and more."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Olive Garden",
+        "pctr": 0.30007998351861154,
+        "ad_copy": "Try The Olive Garden's Mediterranean garlic shrimp, only $9.95 for a short time. Enjoy shrimp now saut√©ed in a new roasted garlic sauce of herbs and spices -- with free salad, soup, and bread sticks, during the Italian seafood festival at THE OLIVE GARDEN."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "Domino's Pizza",
+        "pctr": 0.4215970438286936,
+        "ad_copy": "Only from Domino's, new pesto crust pizza. Sweet basil, parsley and garlic, baked right into the dough. Then sprinkled with romano cheese all around the crust. Call and get a large, one topping, just 9.99. Get the door...it's Dominos."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Sweet Pepper Deli",
+        "pctr": 0.3744066851202469,
+        "ad_copy": "{00;00.2} We've all got things to do\n{00;01.1} And it seems like lines pop up everywhere\n{00;02.3} If you don't have time for the line, you can Avoid the Line At Sweet Peppers Deli\n{00;06.8} Call in your Order\n{00;09.4} Download our app\n{00;12.3} Or Order online at Sweet Peppers Deli dot com"
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Sirloin Stockade",
+        "pctr": 0.45656004605519274,
+        "ad_copy": "And now a brief lesson in \"Moo-ology\"\nMoo\nThat means the Sirloin Stockade has great food.\nMooo.\nThat means the prices are affordable.\nMoooo.\nHe says they serve more than just steaks and burgers.\nMoooooo.\nHe recommends you try...the chicken.\nSirloin Stockade. 790 North Main Street in Canton."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "FireFish Grill",
+        "pctr": 0.47525238344768606,
+        "ad_copy": "Looking to reel in some really tasty fresh fish?\nLook no further than FireFish.\nAnd at just $10.95 each...you'll fall hook, line, and sinker for all 8 of our Locals' Specials.\nAdd some fire to your next dining experience at the FireFish Grill on the Santa Cruz Wharf."
+    }
+]

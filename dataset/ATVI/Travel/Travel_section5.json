@@ -1,0 +1,68 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "City of Seattle",
+        "pctr": 0.45472894578258294,
+        "ad_copy": "Seattle, like many large cities, is really a collection of neighborhoods -- small towns if you will -- that combine to give the appearance of one large urban center. But take the time to look a little closer and you'll discover each section of the city is distinct in character, with its own attractions and reasons to visit. If you seek Seattle's Scandinavian heritage, head for Ballard. If you want a little Asian flavor, the International District should be your destination. Spectacular views? Try Queen Anne, Capitol Hill, West Seattle, or Magnolia. Whatever you seek in leisure, recreation, entertainment, or dining, you'll be sure to find it in one of Seattle's neighborhoods."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "City of Park City",
+        "pctr": 0.3246643022648799,
+        "ad_copy": "If you think the setting is superb, wait until you try the cuisine.\nFact is, Park City, Utah, features more chefs per capita than Paris. Tr√®s bon! Our collection of over 100 eating establishments includes cozy bistros, award-winning restaurants with world-renowned reputations-many with sommeliers on staff and quirky bars with captivating character. All nestled in the mountains. Yes, Park City will satisfy your appetite for escape as well as for memorable dining destinations. Enter to win a trip to the Bon Appetit Grub Crawl this summer. Go to VisitParkCity.com/GrubCrawl for details.\nPark City. A mountain range of possibilities."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "City of New York",
+        "pctr": 0.40223059028372526,
+        "ad_copy": "New York City known to many as the Capital of the World! Can you think of a place other than the Big Apple that has over 150 museums, 900 art galleries, 38 Broadway plus Off Broadway theatres, 18,000 restaurants, 2,000 bars and nightclubs, 30 department stores, 1,700 parks, and the list goes on! Over 40 million people visit NYC each year, and we hope you plan to be one of them. NY City Guide Magazine is proud to present you with this guide to assist you in exploring, experiencing, and enjoying all the variety, wonder, and excitement this great city has to offer. There's something for everyone in NYC! Come visit NYC at www.cityguidemagazine.com."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Canada",
+        "pctr": 0.3768677768243147,
+        "ad_copy": "Thousands of miles of unspoiled wilderness. Boy oh boy are you gonna need a good guide. Canada is big, rugged, 100% pure, and definitely the place to go for authentic outdoor adventure. That's why we've put together an amazing 44-page guide, jam-packed with unique adventures, astounding photographs, regional highlights, and information on the valuable exchange rate and how to get here. And best of all, it's free. Get closer to polar bears, moose, and whales; mush you own team of sled dogs across northern lands; or play all day, then retreat to the comforts of a resort lodge nestled amid majestic mountains. For your FREE copy of \"Great Canadian Adventures\" call 1-877-8-CANADA. The World Needs More CANADA."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Princess Cruise Lines",
+        "pctr": 0.48212614163825174,
+        "ad_copy": "It's truly an epic adventure, a Princess world cruise. Over 100 days, sailing across the world's seas and visiting the most sensational destinations on earth.\nThe world cruise is a journey every intrepid traveler has dreamed about, and Princess can take you there.\nWhat lies ahead of you is a galaxy of the most legendary, exiting and romantic ports in the world, destinations that will delight the mind and excite the imagination.\nFrom once mighty civilizations, to sparkling cosmopolitan cities, from enchanted island jewels to dramatic natural wonders, you'll experience more in one monumental voyage than most people do in a lifetime of travel.\nA Princess World Cruise, it's an adventure of a lifetime."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "East Africa",
+        "pctr": 0.368398719784466,
+        "ad_copy": "Roaming wild in this vastly beautiful landscape is the worlds' greatest concentration of mammals ... lion, cheetah, wildebeest, elephant, giraffe, zebra, and endless birdlife. Tanzania offers the most superb wildlife viewing in East Africa in its premiere game parks on the Serengeti, Ngorongoro, and Tarangire! Travel far beyond the beaten path to enjoy rich encounters with traditional African tribes such as the Massai and the Hadza. Fly to the beautiful Kenya coast and explore historical Mombasa and the exotic 15th century Arab stonetown of Lamu. Languish on stunning tropical islands steeped in traditional Swahili culture. Relax on endless sandy beaches, and snorkel colorful coral reefs in the warm Indian Ocean."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Travelocity",
+        "pctr": 0.36373050895991255,
+        "ad_copy": "Congratulations! You've successfully planned another vacation. You've called the airlines, the hotels, the rental car places and you've just hung up the phone. So brace yourself - the nagging doubt, the one that says, did I get a good deal on this vacation? There's a better way to book travel. Travelocity.com. You'll have over 700 airlines, over 45,000 hotels, and over 50 rental car companies all at your fingertips. You're in control. Even look at a picture of your hotel room, or choose your airline seat. Enjoy vacation, and save your nagging doubt for your auto-mechanic. Travelocity.com...go virtually anywhere."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Travelocity",
+        "pctr": 0.3310309137088533,
+        "ad_copy": "Congratulations! You've successfully planned another vacation. You've called the airlines, the hotels, the rental car places and you've just hung up the phone. So brace yourself - the nagging doubt, the one that says, did I get a good deal on this vacation? There's a better way to book travel. Travelocity.com. You'll have over 700 airlines, over 45,000 hotels, and over 50 rental car companies all at your fingertips. You're in control. Even look at a picture of your hotel room, or choose your airline seat. Enjoy vacation, and save your nagging doubt for your auto-mechanic. Travelocity.com...go virtually anywhere."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "Qantas",
+        "pctr": 0.3473891094103344,
+        "ad_copy": "Have you ever been harbour hopping by moonlight? Found yourself in a land without strangers? Been a fish? Caught a water-taxi to the opera? Taken your pick of 1,110miles of coral reef? Beheld twelve wonders of the world? Waltzed with a kangaroo? Seen an entire country smile? Dreamed about a vacation after it was over? For those who long to take home more from a vacation than pictures and souvenirs, American Express Travel is offering two week air & hotel vacations with Quantas to Sydney, Melbourne and the Great Barrier Reef. Packages start from $1899 per person. Find out how two weeks can change your life. Call us today at 1-800-AXP-8341 and make your Australian dream come true."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Celebrity Cruises",
+        "pctr": 0.37307155517207,
+        "ad_copy": "Discover a vacation where dining is a culinary journey. Enjoy up to 12 distinctive restaurants where the vibe is as appealing as the cuisine and the menus are crafted by a James Beard-featured chef. Find the perfect wine to complement any dish from a list over over 480 selections. and choose from itineraries that visit more that 260 worldwide destinations on all seven continents.\nBecause we believe every moment of your vacation should be measured by just how far it takes you from the ordinary.\nThat's modern luxury.\nExperience it at celebritycruises.com.\nTo book, call us at 1-877-297-6143 or contact your travel agent."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "State of Alaska",
+        "pctr": 0.49961461891992803,
+        "ad_copy": "Before you stand in Denali's shadow, view moose up close, float down the Yukon, and\nmarvel at Glacier Bay, you have to call Holland America. Our Alaska is not just a\ncollection of sights. It's feeling the Gold Rush come to life, floating downriver on our\nexclusive Yukon Queen. And a first glimpse of mountain peaks that split the sky, from\nour spacious railcars. To get started, simply ask for our free Alaska Planning Guide. It's\nbrimming with everything you need to plan your dream trip, from the friendliest, most\nknowledgeable staff in Alaska. Put the dream in motion today. The difference is Holland\nAmerica."
+    }
+]

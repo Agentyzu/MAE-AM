@@ -1,0 +1,62 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Sprint",
+        "pctr": 0.3407246303532115,
+        "ad_copy": "Ever wonder why the Sunday paper is so huge? Could it be because we have more free time on Sundays? And now Sprint gives you a little free phone time on Sundays too! Now when you get Sprint's nickel nights, not only do you get 5 cent calling every night, but you get an hour of calling every Sunday night for free. Read the paper all day."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "AT&T",
+        "pctr": 0.48232596048110554,
+        "ad_copy": "Ever notice AND is a surefire way to keep a conversation going? Which brings us to AND by AT&T. You get unlimited local AND unlimited long distance from home, so you can talk on AND on. That's nights, weekends, AND everything in between. Call 1800 ATT 4ALL to sign up. AND brings it all together, from AT-AND-T."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "AT&T",
+        "pctr": 0.4774145011866466,
+        "ad_copy": "They call me up. Hey, good news! You can save 35% off AT&T. So I switched. Call my sister. It takes longer getting through. But I'm saving, right? Wrong! Then the bill comes -- 35% off? They forgot to mention it's only on those quick little calls of over 900 something miles away. So, I call them up. Bad news. I'm switching back to AT&T."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "1-800 Collect",
+        "pctr": 0.4635130472037931,
+        "ad_copy": "Still dialing zero to call people collect? Stop! It's expensive. Instead, dial 1-800-COLLECT. Dialing 1-800-COLLECT instead of zero, saves the people you call up to 44%. Just dial 1-800-COLLECT, follow the simple instructions, and your call will go through in seconds. Calling home? Save yourself money! 1-800-COLLECT. Dial it today."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Sprint",
+        "pctr": 0.3833592801348519,
+        "ad_copy": "Imagine your home with a few less walls. More Open. Less Confining. With Sprint One Thousand Anytime, you get a 1000 minutes of state to state long distance for just $40 bucks a month. A thousand minutes of long distance. $40 bucks a month. No time restrictions. No constraints, no brainer. That's the power to live smart. Call 1-800-PINDROP."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "AT&T",
+        "pctr": 0.48076467934361805,
+        "ad_copy": "With the best global coverage and new, more affordable international data packages, checking scores in Dublin, Ireland is like checking scores in Dublin, California. AT&T makes it easier to use your phone abroad. Packages start as low as $30. Log on to att.com/global for more details. AT&T. Rethink Possible¬Æ."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Cisco Systems",
+        "pctr": 0.3596355237417559,
+        "ad_copy": "You started out with one location and kept adding more sites to keep pace with your growing business. Now you're opening a new kind of store. One that everyone can go to. And business is better than ever. Discover all that's possible on the Internet. Cisco Systems. Empowering the Internet Generation."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "IP Telephony",
+        "pctr": 0.3756388504541915,
+        "ad_copy": "Deploying IP Telephony can be a smart move. Gone are the days when there were numerous cables for your regular fixed line telephone system; when you would keep your gaze fixed at the clock while making an international call to your family or business. All this has changed with the introduction of voice over IP telephony."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "AT&T",
+        "pctr": 0.3796761121059834,
+        "ad_copy": "They call me up. Hey, good news! You can save 35% off AT&T. So I switched. Call my sister. It takes longer getting through. But I'm saving, right? Wrong! Then the bill comes -- 35% off? They forgot to mention it's only on those quick little calls of over 900 something miles away. So, I call them up. Bad news. I'm switching back to AT&T."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Sprint",
+        "pctr": 0.3773246347269406,
+        "ad_copy": "Sometimes when you have a great idea you want to tell the world. So the next time you have a great idea don't be shy. And don't wait for someone else to bring you the technology that lets you spread the word. Because with Sprint, you have the world now. And the power to share it with anyone, anywhere, anytime. Sprint...be there now."
+    }
+]

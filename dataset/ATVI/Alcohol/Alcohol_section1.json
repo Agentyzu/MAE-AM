@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Level Vodka",
+        "pctr": 0.4790437319999055,
+        "ad_copy": "Introducing LEVEL. The worlds first perfectly balanced Vodka. One sip and you'll know a new level."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Cubana Subunyal Wine",
+        "pctr": 0.4643602656699139,
+        "ad_copy": "Ahh, it's marvel is made only from the free run juice of the grape, and like most suberan thridals, made completely from the noble grape from which it's named, Cubana Subunyal."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Michelob",
+        "pctr": 0.3862351272439912,
+        "ad_copy": "Send over a beer that's less likely to be sent back. With a smooth, satisfying taste, Michelob Light makes every occasion seem special."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Montalgo Beer",
+        "pctr": 0.37740669388798553,
+        "ad_copy": "Hey. What's life without friends? What's after 5 without your crew? What's kicking back without Montalgo Beer. A full-body, great tasting craft beer in a 120 calories. Montalgo Beer. Chill with friends."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Anheuser-Busch",
+        "pctr": 0.3076836920913973,
+        "ad_copy": "Bud Light: \"The great taste won't fill you up and never lets you down. Make it a Bud Light\"."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Disaronno Original Amaretto",
+        "pctr": 0.38443784981227436,
+        "ad_copy": "Presenting the beach party, tailgate party, happy hour, poolside, just chillin' cocktail of choice. Disaronno Punch. Light a fire."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Coors Original",
+        "pctr": 0.4414788636237379,
+        "ad_copy": "The beer Adolph Coors first brewed in 1873. Brewed in the Rockies for a uniquely crisp, clean and drinkable \"Mile High Taste.\" I would not kid you about this."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Jim Beam",
+        "pctr": 0.320074293323975,
+        "ad_copy": "Jim Beam Kentucky Straight Bourbon Whiskey. Get in touch with your masculine side."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "The Patron Mojito",
+        "pctr": 0.44574989402260645,
+        "ad_copy": "The Patron Mojito. Turn an ordinary mojito into an extraordinary one. Make it a Patron Mojito. Tequila 100% Agave--Silver Patron"
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Michelob",
+        "pctr": 0.44153035844771793,
+        "ad_copy": "Exceptionally smooth.\nRemarkably refreshing.\nWith only 95 calories and 2.6 carbs.\nGood taste that doesn't compromise.\nLive life to the ULTRA.\nMichelob ULTRA.\nEnjoy responsibly."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Paul Masson Wine",
+        "pctr": 0.3334640192444048,
+        "ad_copy": "If you're concerned about your child's nutrition, ask your doctor about PediaSure. It's a complete balanced source of nutrition with protein, vitamins, and minerals growing children need. Plus it's available in five \"kid approved\" flavors they'll love."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "The Macallan Scotch",
+        "pctr": 0.31613310829494046,
+        "ad_copy": "For some reason, you've developed an irrational fear of the word spillage- Macallan"
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Knob Creek Scotch",
+        "pctr": 0.4116017153976028,
+        "ad_copy": "At some point in time a man switches from \"I'll have what he's having\" to \"I'll have what I'm having.\" Drink Life Deeply- Knob Creek."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Bombay Gin",
+        "pctr": 0.33689306974133865,
+        "ad_copy": "It's pretty simple really. Either you want to drink the best gin ... or you don't. Bombay Sapphire. Gin ... only better."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "Michelob",
+        "pctr": 0.3247045633757442,
+        "ad_copy": "If this is your idea of redeeming miles, this is your beer. 2.6 grams carbs and 95 calories. Michelob Ultra. Lose the carbs. Not the taste."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Miller Brewing Company",
+        "pctr": 0.42401323070546737,
+        "ad_copy": "Blue skies. Yellow lemons. One perfectly refreshing day. Minute Maid Lemonade. Made with real lemons. For people who know lemonade. it's Minute Maid."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Stella Artois",
+        "pctr": 0.40240716311034463,
+        "ad_copy": "Oh, excuse moi\nMy name is Stella Artois\nPerhaps you have heard of me?\nI come from a small town in Belgium, Leuven\nI am blonde\nI am rich\nAnd I can be found almost anywhere a good time is to be had\nWhy don't you come find me?\nA tout alors"
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Bombay Saphire",
+        "pctr": 0.42848021800127306,
+        "ad_copy": "It's pretty simple really. Either you want to drink the best gin... or you don't. Bombay Sapphire. Gin... only better."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Coors",
+        "pctr": 0.3462361470177969,
+        "ad_copy": "Nothing beats the crisp, clean, cold taste of Coors Light. Coors Light. Tap the Rockies."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Hennessey Cognac",
+        "pctr": 0.38275470062971717,
+        "ad_copy": "Instigator ... Muse ... Daughter ... Klutz ... Accomplice ... Gardener ... Slow kisser ... Journalist ... Optimist ... Pessimist ... Flirt ... Insomniac. Hennessy Very Special Cognac. Appropriately complex."
+    }
+]

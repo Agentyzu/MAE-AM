@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Ford",
+        "pctr": 0.39939602982234723,
+        "ad_copy": "The all new Ford Freestar. If you haven't looked at Ford lately. Look again."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Ford",
+        "pctr": 0.350969970322411,
+        "ad_copy": "Why wait for a change in scenery, when you can make your own? Attitude. Ford ZX2. Built to last."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Jaguar",
+        "pctr": 0.36368025883702515,
+        "ad_copy": "Elegant. Luxurious. Magnificent...and affordable. The all new SE1200 from Jaguar. Sophistication...simplified."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Volkswagen",
+        "pctr": 0.49473551453199816,
+        "ad_copy": "The new Passat. It only looks like a million bucks."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Toyota",
+        "pctr": 0.3958170432165855,
+        "ad_copy": "Confine the body and you shrink the spirit. The all- new Avalon. The most spacious, luxurious sedan we've ever created. Toyota. Be good to yourself everyday."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "BMW",
+        "pctr": 0.30287652371127705,
+        "ad_copy": "For nearly ten years, we've been planning, designing, engineering, and building. And now, we're ready to launch. Presenting the ultimate BMW dealership. The new rusnak BMW"
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "General Motors",
+        "pctr": 0.32190918218367315,
+        "ad_copy": "It's 1894. You've got a job interview. Tomorrow. 140 miles away. GIDDYUP. General Motors. People in Motion."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Honda",
+        "pctr": 0.43346688600869665,
+        "ad_copy": "Opportunity knocks only once a year. And it's gone before you know it. See your Honda dealer while the window of opportunity is still wide open."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "BMW",
+        "pctr": 0.48470973651541005,
+        "ad_copy": "If you could promote yourself to the BMW of your dreams, would you make your move?"
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Volkswagen",
+        "pctr": 0.38462499434341485,
+        "ad_copy": "The new Volkswagen Beetle Convertible. One good thing leads to another."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Nissan",
+        "pctr": 0.33964186378632716,
+        "ad_copy": "The all-new 265-HP Nissan Maxima. With 6-speed manual transmission, dual chrome-tip exhaust and quick-response, drive-by-wire electronic throttle. Drivers, watch your backs."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "Ford",
+        "pctr": 0.3437296304239119,
+        "ad_copy": "It's a car that boasts as much personality as special features. Get to know a real character. The Scion tC - from Ford."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Porsche",
+        "pctr": 0.4703833040553634,
+        "ad_copy": "For lunch, The Porsche 944 Turbo generally prefers Farraris. although it has been known, occasionally, to snack on Corvettes."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Kia Sedona",
+        "pctr": 0.3306007735291877,
+        "ad_copy": "The Kia Sedona, It's the minivan with the governments highest safety rating and the lowest price. Visit your New York, New Jersey and Fairfield County Kia Retailers, Hurry."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "Infinity Baltimore",
+        "pctr": 0.3490736186089216,
+        "ad_copy": "Here's how this works. You pay Infinity of Baltimore zero down payment, zero interest and no payments for a year and we send you $500.00. Nice."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Acura",
+        "pctr": 0.3260436026549096,
+        "ad_copy": "Variable flow turbo. Instant response for the instant- messaging crowd. The Acura RDX."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Saab",
+        "pctr": 0.446552161522089,
+        "ad_copy": "Visit your tri-state dealer today. Lease a 2001 SAAB 93SE convertible. 36-monthly payments at $499. Total delivery $3,492.62 including security deposit. Title insurance and registration extra."
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Lincoln",
+        "pctr": 0.32660753217640365,
+        "ad_copy": "Remember the \"Back to Basics\" movement? Neither do we. Lincoln Town Car. What a luxury car should be."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Cadillac",
+        "pctr": 0.4496166376861314,
+        "ad_copy": "Check it out. This luxury SUV gets an EPA estimated 20 miles per gallon, city. Better than this Mini Cooper. The 8 passenger Cadillac Escalade Hybrid. Betcha didn't see that coming."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Acura",
+        "pctr": 0.3039713606337691,
+        "ad_copy": "Variable flow turbo. Instant response for the instant-messaging crowd. The Acura RDX"
+    }
+]

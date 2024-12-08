@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Clairol",
+        "pctr": 0.3488713925116776,
+        "ad_copy": "For healthy looking color, trust your instincts. Natural Instincts. With 100% pure aloe, chamomile and ginseng. It makes your hair look even shinier and healthier- looking than before you colored it. Clairol. Color wonderful."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Max Factor",
+        "pctr": 0.3128666664103822,
+        "ad_copy": "Feast our eyes on the new Maxeye Collection. A luscious, lashous collection: wet/dry shadow trios, dual applicators, perfecting mascara and precision liners. High fashion, high-design indulgences from the new Max Factor. Tempted? Max Factor . . . makeup, maximized."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Maybelline",
+        "pctr": 0.30916965076504427,
+        "ad_copy": "The lingerie? Unimportant. The shoes? Who cares. The dress? Forget it! Accessorize what really matters, with Slim Elegance Lipstick. Twelve smooth, sensuous colors that make lips sizzle. SLIM ELEGANCE ... smart ... and beautiful ... by Maybelline."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Essie Nail Polish",
+        "pctr": 0.448732287025696,
+        "ad_copy": "The best tootsies this summer will be twined and wrapped enveloped in sashes, laces and ties of whimsically wonderful shoes. Add the perfect finish with Essie's new summer shades and you'll be colorful from tip to toe. Available at all fine salons."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Covergirl",
+        "pctr": 0.4076724935774977,
+        "ad_copy": "Introducing Cover Girl New Nonstop Eyecolor. What makes it last? The extraordinary powder-creme lasting color base, with Vitamin E and Aloe. It goes on first to set the way. So color glides on. Locks on. Stays true. NONSTOP EYECOLOR, new from COVER GIRL."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Covergirl",
+        "pctr": 0.45356739165470533,
+        "ad_copy": "Better skin...in a snap! Aquasmooth Makeup SPR 15. Inside this airtight compact is a fresh form of makeup. Water-based, vitamin-enriched formula. Get noticeably better, beautiful skin every time you use it! In true-to-you shades - easy breezy beautiful COVERGIRL."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Maybelline",
+        "pctr": 0.35884434501125717,
+        "ad_copy": "Want wetter than wet lips? Liquify! High shine liquifying color gloss plus dazzling melted diamond shine. Glides on slick, never sticky. Add some flash to the splash! New Wet Shine Diamonds Liquid. Maybe she's born with it. Maybe it's Maybelline."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Revlon",
+        "pctr": 0.4637946971179643,
+        "ad_copy": "The Ultimate Smoothness. The Ultimate Shine. The Ultimate Nail Color. Hands down. Revlon Nail Enamel. From the reddest reds to the nudist nudes. 56 Ultimate shades. Your's included. Revlon. Only Revlon makes it. Only you make it unforgettable."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "L'Oreal",
+        "pctr": 0.3344142878968645,
+        "ad_copy": "Unleash your wild side with new Feline Mascara. Feline's new quick charge brush captures every lash. Instant volume, ferocious full lash density. New Feline Mascara from Loreal Makeup Designer, Paris. Add new liner noir to complete your feline look."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Olay",
+        "pctr": 0.39022329237803666,
+        "ad_copy": "Most regular soaps leave your skin feeling dry. But Olay-clean lather is specially formulated to wash away dry skin. No other beauty bar leaves skin smoother. Because dry cleaners are for blouses. Not Bodies. Olay...love the skin you're in."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Pond's",
+        "pctr": 0.41621702820365397,
+        "ad_copy": "Introducing Pond's Cleansing and Make-Up Remover Towelettes. So revolutionary -- our dirt loving fiber gently cleans dirt, removes make-up in one easy step (even the dreaded waterproof kind). So quick -- skin is left soft, healthy, clean in seconds. Wow!"
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "Maybelline",
+        "pctr": 0.4714637275466603,
+        "ad_copy": "New Volume Seduction XL Lip Plumper. The most voluptuous lips ever! The truth is in the tingle, the proof is in the pout. Plump up your lips...up to 30% more! Maybelline New York. Maybe she's born with it. Maybe it's Maybelline."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Beauty.com",
+        "pctr": 0.4943560032554661,
+        "ad_copy": "You can look all around the world.....you can search department stores and boutiques....you can try to see top experts if you've got lots of time and money...or you can fill all your beauty needs online. Beauty.com..... the world of beauty. Online."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Olay",
+        "pctr": 0.43116114216312057,
+        "ad_copy": "Your first age spot. You think everyone notices. A laser can zap it, but lasers aren't for you. New Olay Regenerist Targeted Tone Enhancer. To pinpoint discolorations, diminish their appearance and bring new brightness to your skin."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "L'Oreal",
+        "pctr": 0.4770402170054606,
+        "ad_copy": "Now, go beyond protection...to revitalized color. New Excellence Creme with ceramide and protein. Revitalizes for rich, healthy color. Provides extra protection against damage. Absolutely doesn't drip. For superior gray coverage. L'Oreal. Because you're worth it."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Garnier",
+        "pctr": 0.39076879338281106,
+        "ad_copy": "Ok, the hair needed a little change. Nothing crazy. So I picked up Garnier Lumia. It's different because it permanently brightens your natural hair color, without dramatically changing it. Garnier Lumia. It's like your real hair...just a little different."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Covergirl",
+        "pctr": 0.31879026707968144,
+        "ad_copy": "Can your lip color outlast this day? What a system! First, the color coat sets in a minute, then the moisture coat shines and helps protect. 34 radiant shades that go from cake to kisses, from Miss to Mrs., without reapplying at all! Outlast All-day lip color!"
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Almay",
+        "pctr": 0.32387836044119056,
+        "ad_copy": "New Almay Bright Eyes. Open wide. Take your eyes from tired to tremendous with the Almay Bright Eyes Collection. Color cream shadows, dual-ended eyeliners and lash-lifting mascara designed to give you wider, brighter, beautiful eyes."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Maybelline",
+        "pctr": 0.44169988525021886,
+        "ad_copy": "At last. Stay-put liquid makeup is morning-fresh...day to night. EverFresh stay-put makeup won't let you down! Slips on smooth...feels light. Looks flawlessly natural, way past five! Maybe she's born with it, maybe it's Maybelline."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Coastline Fragrance For Men",
+        "pctr": 0.3457617958836881,
+        "ad_copy": "A windswept coastline. Waves crashing against the shore. The endless sweep of horizon. Introducing Coastline our newest fragrance for men. Fresh. Liberating. Distinctive. An invigorating blend of cool aromatics and rich warm woods."
+    }
+]

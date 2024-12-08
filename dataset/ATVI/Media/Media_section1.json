@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "6 Flags",
+        "pctr": 0.3533158094909953,
+        "ad_copy": "Cool off at the # 1 water park in Phoenix\nWet-N-Wild is now 6 Flags Hurricane Harbor\nSave up to 50% on season passes, but hurry - offer ends June 16th\nHurricane Harbor. Bigger, Better, wetter than ever!"
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "AOL",
+        "pctr": 0.3834858900317561,
+        "ad_copy": "America Online is proud to support Sesame Street. No two kids are alike but what they all share is endless curiosity. AOL helps kids find new things to be curious about every day. America Online. Never stop learning."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Biography Magazine",
+        "pctr": 0.32560515428726194,
+        "ad_copy": "Find your inspiration. Biography Magazine. In the April issue, Sandra Bullock. Plus, Ernest Shakleton's Antarctica. Anne Heche. Kathleen Turner. And much more. For whoever you are, find your inspiration in Biography Magazine. Every life has a story."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Sunny Cruise Magazine",
+        "pctr": 0.49228759751371476,
+        "ad_copy": "Living your dream vacation takes a great deal of planning. And Sunny Cruise Magazine opens up a dazzling world of options. Explore with us the entire world of adventure and a desire for knowledge. Look for Sunny Cruise Magazine in your favorite magazine shop."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "DirectTV",
+        "pctr": 0.3398865981947401,
+        "ad_copy": "Now showing, without going! Cozy up on your couch and order the show on remote with the best selection of PAY PER VIEW movies. BLOCKBUSTER TICKET. Only on DIRECTV. Let the movies come to you! To purchase a DIRECTV system call 1-800-DIRECTV."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Disney Theme Park",
+        "pctr": 0.4061788730366981,
+        "ad_copy": "See, soar, play, explore... At Disney, where learning is powered by imagination."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "20/20",
+        "pctr": 0.4776241918113318,
+        "ad_copy": "Martha Stewart. Love her? Hate her? Either way you'll finally hear from her. Martha Stewart in her only interview speaks exclusively to Barbara Walters. Tonight on 20/20. 10 PM / 9 central."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Time Magazine",
+        "pctr": 0.4897128797587684,
+        "ad_copy": "In an era of tabloid journalism, we believe the truth to be sensational enough. Understanding comes with TIME. TIME magazine...read it today."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "XM Satellite Radio",
+        "pctr": 0.4868447765808775,
+        "ad_copy": "Right now, in the skies above America, two XM Radio Satellites are broadcasting over 100 digital channels of music, news, sports and talk coast-to-coast. All for less than ten dollars a month."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "New Yorker Magazine",
+        "pctr": 0.42610822012483773,
+        "ad_copy": "Now, get 50 issues of the New Yorker for just $18. Save $107 off the cover price and get this special cartoon collection free with your paid subscription. Call 1-800-847-7200 now."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Forbes",
+        "pctr": 0.4453884745538604,
+        "ad_copy": "This is not your father's business world. Today's corporate America is a combat zone. To the victors go the spoils. And how do you keep track of the players? Simple. You do it with one word. Forbes."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "New York Times",
+        "pctr": 0.43472942424943417,
+        "ad_copy": "Call now for 8 weeks of the New York Times, including the amazing Sunday Times - featuring Arts & Leisure, Sunday styles, and the magazine, all for 50% off. Call 1-800-654-2060 now and get the times delivered to your home every day."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "AMC",
+        "pctr": 0.4374479343191353,
+        "ad_copy": "Go back to high school without REALLY going back to high school? Ahhhh, it's the 'Back To School Movie Marathon' Sunday, August 29th only on AMC."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Time Warner Cable",
+        "pctr": 0.36192630504257556,
+        "ad_copy": "Time Warner digital cable beats the satellite dish by giving you more movie channels. Time Warner Cable. The very best in TV keeps getting better."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "Emusic",
+        "pctr": 0.38056839277507437,
+        "ad_copy": "We're the home for artists from little towns as far away as say, Liverpool. Paul McCartney's new album Memory Almost Full available only on emusic."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Money Magazine",
+        "pctr": 0.49012678182939395,
+        "ad_copy": "There will always be people richer than you. But there don't have to be so many. Money. You need this magazine."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "MTV",
+        "pctr": 0.34114391843364766,
+        "ad_copy": "18 million 18 to 30-year-olds voted in the last presidential election. Who knows what would have happened if 20 million had. 20 Million loud in 2004- Choose or Loose. Go to MTV.com or call 1800 VOTE SMART for more information."
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "ESPN",
+        "pctr": 0.35515898825250103,
+        "ad_copy": "On January 30th... The crowd will shake... The earth will rumble... 30 superstar wrestlers of the WWF bang heads in a winner take all rumble... 30 wrestlers... One ring... Something's gotta give... Superstar wrestling on ESPN."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Food Network",
+        "pctr": 0.3169575870850346,
+        "ad_copy": "Have gorgeous red, lime-green and shocking purple tomatoes taken over your Instagram page? It's that time of year again. Truly good tomatoes ripen in late summer, and they make tomatoes eaten any other time pale in comparison."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "On Demand",
+        "pctr": 0.41486041195268936,
+        "ad_copy": "Some people think that pressing their On Demand button will make their house explode. The On Demand button is a way to access free movies. The button to blow-up a house is actually channel up, channel down, two-star, seven-seven."
+    }
+]

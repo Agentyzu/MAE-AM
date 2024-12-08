@@ -1,0 +1,122 @@
+[
+    {
+        "ad_id": 0,
+        "ad_name": "Philips Sonicare",
+        "pctr": 0.4988838162377156,
+        "ad_copy": "Sonicare. Brush. Clean. Whiten. Smile. The simple truth is all power toothbrushes are not created equal. Philips Sonicare. The Sonic toothbrush."
+    },
+    {
+        "ad_id": 1,
+        "ad_name": "Chanel Lip Intensities",
+        "pctr": 0.34204078502112834,
+        "ad_copy": "Introducing New Lip Intensities from Chanel. With four fabulous finishes and cool color. Hot off the Paris runway. Lip color comes out to play."
+    },
+    {
+        "ad_id": 2,
+        "ad_name": "Lean Source Wieght Loss Supplement",
+        "pctr": 0.371864998315377,
+        "ad_copy": "1 part diet + 1 part exercise + 1 part LeanSource, = 1 rekindled romance. New LeanSource Weight-Loss Supplement. Success you can count on."
+    },
+    {
+        "ad_id": 3,
+        "ad_name": "Brita Water Filter",
+        "pctr": 0.34025233150911993,
+        "ad_copy": "Every drop tastes so crisp and fresh, you'll think it has to be bottled water. But its fresh filtered Brita water. Great tasting water, without the bottle."
+    },
+    {
+        "ad_id": 4,
+        "ad_name": "Degree",
+        "pctr": 0.33622859379912035,
+        "ad_copy": "New Degree ultra clear. Formulated to go on clear, and stay clear. It's little black dress approved."
+    },
+    {
+        "ad_id": 5,
+        "ad_name": "Skintimate",
+        "pctr": 0.39637670406942044,
+        "ad_copy": "Fruit smoothies skintimate Peaches and Raspberries Rain Shave Gel. Two delicious new ways to smoother, softer legs. Get skintimate with your legs."
+    },
+    {
+        "ad_id": 6,
+        "ad_name": "Vicks Chloraseptic Spray",
+        "pctr": 0.3731310531491929,
+        "ad_copy": "Fast, lasting relief from a prickly throat. Vicks Chloraseptic Spray. Five sprays for instant relief that stays."
+    },
+    {
+        "ad_id": 7,
+        "ad_name": "Clean And Clear",
+        "pctr": 0.4629234305637777,
+        "ad_copy": "Feel a cool deep down tingly clean. Clean and clear deep action cream cleanser. Clean and clear and under control."
+    },
+    {
+        "ad_id": 8,
+        "ad_name": "Degree",
+        "pctr": 0.40974154059529816,
+        "ad_copy": "A new breakthrough now with High-Response protection made for men. Degree, kicks-in in the clutch."
+    },
+    {
+        "ad_id": 9,
+        "ad_name": "Clearasil",
+        "pctr": 0.3955158712266031,
+        "ad_copy": "Clearasil Daily Face Wash. Visibly clearer skin without drying out your face. Clearasil. May cause confidence."
+    },
+    {
+        "ad_id": 10,
+        "ad_name": "Nicorette Gum",
+        "pctr": 0.48786920122201893,
+        "ad_copy": "Before giving in to that one cigarette. Remember, they travel in packs. You can do it. Nicorette can help."
+    },
+    {
+        "ad_id": 11,
+        "ad_name": "Pepto Bismol",
+        "pctr": 0.3613564013452891,
+        "ad_copy": "Wherever your weekend takes you...take Pepto."
+    },
+    {
+        "ad_id": 12,
+        "ad_name": "Bounty",
+        "pctr": 0.4400528563238729,
+        "ad_copy": "Bounty is more absorbent. So the roll can last 50 percent longer than the leading ordinary brand. So you get more life per roll. Bounty, the quicker picker upper."
+    },
+    {
+        "ad_id": 13,
+        "ad_name": "Burt's Bees",
+        "pctr": 0.3757299323016251,
+        "ad_copy": "A true force of nature...has radiance that glows. Burt's Bees sensitive skin care. Healthy skin care powered by nature. So you can be a force. Burt's Bees."
+    },
+    {
+        "ad_id": 14,
+        "ad_name": "Caress",
+        "pctr": 0.4637753768869758,
+        "ad_copy": "New Caress Moisturizing Body Wash with three Moisturizers. It hydrates, replenishes and smooths for one beautiful silky feeling. No soap can do all that."
+    },
+    {
+        "ad_id": 15,
+        "ad_name": "Nair",
+        "pctr": 0.34341727183312604,
+        "ad_copy": "Nicks. Cuts. Stubble. Trouble. Say Goodbye to the blade, babe. Nothing works like four minute Nair. Nair lotion...the #1 choice."
+    },
+    {
+        "ad_id": 16,
+        "ad_name": "Cialis",
+        "pctr": 0.46505382621132063,
+        "ad_copy": "Cialis is the first tablet for erectile dysfunction that gives you up to 36 hours to choose the moment that's right for you and your partner."
+    },
+    {
+        "ad_id": 17,
+        "ad_name": "Curel",
+        "pctr": 0.30425662298119144,
+        "ad_copy": "Heals like a cream. Feels like a lotion. If you've got extra-dry skin, get soft, get smooth. Get Curel."
+    },
+    {
+        "ad_id": 18,
+        "ad_name": "Neutrogena",
+        "pctr": 0.3271912373276019,
+        "ad_copy": "Long-lasting shine. Never sticky. Neutrogena Moisture Shine Gloss. Neutrogena - beautiful and beneficial."
+    },
+    {
+        "ad_id": 19,
+        "ad_name": "Nivea For Men",
+        "pctr": 0.39286464491961326,
+        "ad_copy": "Transform yourself into someone much smoother. Deep-Cleaning Face Scrub from Nivea for Men."
+    }
+]
