@@ -1,6 +1,6 @@
 # MAE-AM
 
-This repository contains the official implementation of the **MAE-AM** system, as described in the paper **"MAE-AM: Query-driven Multi-Advertisement Embeddings and Auction Mechanism in LLM"**, submitted to **IJCAI 2025**.
+This repository contains the official implementation of the **MAE-AM** system, as described in the paper **"MAE-AM: Query-driven Multi-Advertisement Embeddings and Auction Mechanism in LLM"**, submitted to **NeurIPS 2025**.
 
 ## Introduction
 
@@ -45,7 +45,7 @@ If you find this work useful, please cite us:
 @inproceedings{maeam2025,
   title={MAE-AM: Query-driven Multi-Advertisement Embeddings and Auction Mechanism in LLM},
   author={Anonymous authors},
-  booktitle={Proceedings of the 34th International Joint Conference on Artificial Intelligence (IJCAI)},
+  booktitle={ Advances in Neural Information Processing Systems (NeurIPS)},
   year={2025}
 }
 ```
