@@ -1,6 +1,6 @@
 # MAE-AM
 
-This repository contains the official implementation of the **MAE-AM** system, as described in the paper **"MAE-AM: Query-driven Multi-Advertisement Embeddings and Auction Mechanism in LLM".
+This repository contains the official implementation of the **MAE-AM** system, as described in the paper **"MAE-AM: Query-driven Multi-Advertisement Embeddings and Auction Mechanism in LLM"**.
 
 ## Introduction
 
