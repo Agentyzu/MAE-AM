@@ -46,6 +46,6 @@ If you find this work useful, please cite us:
   title={MAE-AM: Query-driven Multi-Advertisement Embeddings and Auction Mechanism in LLM},
   author={Anonymous authors},
   booktitle={Comming Soon},
-  year={2025}
+  year={2026}
 }
 ```

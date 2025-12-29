@@ -6,7 +6,6 @@ import importlib
 source_dir = r"dataset\ATVI"
 type_names = [name for name in os.listdir(source_dir) if os.path.isdir(os.path.join(source_dir, name))]
 
-
 config_map = {}
 for name in type_names:
     config_module = importlib.import_module(f"cfgs.ATVI_AAL_configs.config_{name}_AAL")

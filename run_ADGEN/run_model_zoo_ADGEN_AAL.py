@@ -8,7 +8,6 @@ config_map = {
     'skirt': config_skirt_AAL.cfg,
     'trousers': config_trousers_AAL.cfg
 }
-
 name = ['jacket', 'skirt', 'trousers']
 
 for i in range(1, 10):
