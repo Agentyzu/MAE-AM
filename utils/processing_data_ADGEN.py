@@ -26,7 +26,7 @@ with open(ADGEN_path, 'r', encoding='utf-8') as f:
         # Assume the type is always at the beginning of the content and delimited by '*'
         type_info = content.split('*')[0]
         if "类型#" in type_info:
-            # Extract the type value after '类型#'
+            # Extract the product type from the attribute tag.
             item_type = type_info.split('#')[1]
 
             # Increment the count for the given type
@@ -79,10 +79,6 @@ for item_type, summaries_and_lengths in type_summaries.items():
         # Find summaries that fall within the current bin's length range
         current_bin_summaries = [summary for summary, length in summaries_and_lengths
                                  if bins[i] <= length < bins[i + 1]]
-
-        # If there are fewer than 10 summaries in the bin, skip it
-        # if len(current_bin_summaries) < 10:
-        #     continue
 
         # Sample 100 summaries from the bin (if there are fewer than 100, sample all)
         sample_count = min(100, len(current_bin_summaries))

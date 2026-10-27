@@ -38,9 +38,7 @@ class LLMProcess:
         self.result["ad_utility"] = self.llm.utilities.tolist()
 
         # Generate final reply
-        self.gen_reply = self.llm.ad_gen_chinese()
-        # You can replace with ad_gen_english() if needed.
-        # self.gen_reply = self.llm.ad_gen_english()
+        self.gen_reply = getattr(self.llm, f"ad_gen_{self.llm.language}")()
 
         self.llm.gen_reply = self.gen_reply
         self.result["gen_reply"] = self.gen_reply
@@ -53,7 +51,7 @@ class LLMProcess:
 
     def run_DSIC(self):
         """
-        Run the DSIC (Dynamic Strategy Informed Content) LLM process with varying beta and strategy.
+        Test dominant-strategy incentive compatibility (DSIC) by varying each advertiser's reported bid.
         """
         # Generate basic reply
         self.basic_reply = self.llm.reply(self.llm.query)
@@ -64,9 +62,8 @@ class LLMProcess:
         # Calculate similarity
         self.llm.calculate_similar(self.basic_reply)
 
-        # Auction process with different beta and strategy
         betas = [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8]
-        for s in range(4):
+        for s in range(len(self.llm.b)):
             for beta in betas:
                 self.llm.auction_DSIC(beta, s)
                 self.result[f"ad_rank_{beta}_{s}"] = self.llm.sigma[:self.llm.q].tolist()
@@ -93,8 +90,7 @@ class LLMProcess:
         self.result["ad_len"] = self.llm.ad_len
         self.result["ad_utility"] = self.llm.utilities.tolist()
 
-        self.gen_reply = self.llm.ad_gen_chinese_SQA()
-        # self.gen_reply = self.llm.ad_gen_english_SQA()
+        self.gen_reply = getattr(self.llm, f"ad_gen_{self.llm.language}_SQA")()
         self.llm.gen_reply = self.gen_reply
         self.result["gen_reply"] = self.gen_reply
 
@@ -118,8 +114,7 @@ class LLMProcess:
         self.result["ad_len"] = self.llm.ad_len
         self.result["ad_utility"] = self.llm.utilities.tolist()
 
-        self.gen_reply = self.llm.ad_gen_chinese_ALS()
-        # self.gen_reply = self.llm.ad_gen_english_ALS()
+        self.gen_reply = getattr(self.llm, f"ad_gen_{self.llm.language}_ALS")()
         self.llm.gen_reply = self.gen_reply
         self.result["gen_reply"] = self.gen_reply
 
@@ -144,8 +139,7 @@ class LLMProcess:
         self.result["ad_len"] = self.llm.ad_len
         self.result["ad_utility"] = self.llm.utilities.tolist()
 
-        self.gen_reply = self.llm.ad_gen_chinese_ALS()
-        # self.gen_reply = self.llm.ad_gen_english_ALS()
+        self.gen_reply = getattr(self.llm, f"ad_gen_{self.llm.language}_ALS")()
         self.llm.gen_reply = self.gen_reply
         self.result["gen_reply"] = self.gen_reply
 
@@ -170,8 +164,7 @@ class LLMProcess:
         self.result["ad_len"] = self.llm.ad_len
         self.result["ad_utility"] = self.llm.utilities.tolist()
 
-        # self.gen_reply = self.llm.ad_gen_chinese_GA()
-        self.gen_reply = self.llm.ad_gen_english_GA()
+        self.gen_reply = getattr(self.llm, f"ad_gen_{self.llm.language}_GA")()
         self.llm.gen_reply = self.gen_reply
         self.result["gen_reply"] = self.gen_reply
 

@@ -1,5 +1,7 @@
 import numpy as np
 from tqdm import tqdm
+from auction.GA import GA
+from auction.GSP_SQA import GSP_SQA
 from utils.calculate_sim import sim
 
 
@@ -14,11 +16,18 @@ class Base_LLM(object):
         # Extracting advertisement data
         self.ad_name = [entry['ad_name'] for entry in data]
         self.pctr = [entry['pctr'] for entry in data]
-        self.content = [entry['content'] for entry in data]    # ADGEN dataset
-        # self.content = [entry['ad_copy'] for entry in data]  # ATVI dataset
+        self.language = config.get('language', 'chinese')
+        if self.language not in ('chinese', 'english'):
+            raise ValueError('language must be chinese or english')
+        self.content_field = config.get('content_field', 'content')
+        self.content = [entry[self.content_field] for entry in data]
 
         # Configuration parameters
         self.q = config.q
+        if not 1 <= self.q <= len(data):
+            raise ValueError('q must be between 1 and the number of advertisements')
+        if config.max_len <= 0:
+            raise ValueError('max_len must be positive')
         self.constant = config.constant
         self.max_len = config.max_len
         self.is_structured = config.is_structured
@@ -40,20 +49,18 @@ class Base_LLM(object):
         """
         n = len(self.content)
         similar = np.zeros(n)
+        words = answer.replace('\n', ' ').split()
+        if len(words) > 50:
+            answer = ' '.join(words[:50])
 
         for i in tqdm(range(n)):
-            words1 = answer.replace('\n', ' ').split()
-            if len(words1) > 50:
-                answer = ' '.join(words1[:50])
-
-            words = self.content[i].replace('\n', ' ').split()
+            content = self.content[i]
+            words = content.replace('\n', ' ').split()
             if len(words) > 50:
-                self.content[i] = ' '.join(words[:50])
+                content = ' '.join(words[:50])
+            similar[i] = sim(answer, content)
 
-            similar[i] = sim(answer, self.content[i])
-
-        # Simulated similarity for testing
-        self.b = np.random.rand(n)
+        self.b = similar
 
     def generate_b(self):
         """
@@ -157,7 +164,7 @@ class Base_LLM(object):
 
     def ad_gen_english(self):
         """
-        Generates a structured Chinese advertisement list with compressed content.
+        Generates an ad-embedded English response, either structured or integrated.
         """
         if self.is_structured:
             prompt = (
@@ -249,54 +256,52 @@ class Base_LLM(object):
 
     def ad_gen_chinese_GA(self):
         reply = ""
-        for i in range(np.sum(np.array(self.ad_len) > 10)):
-            reply += f"{i + 1}.{self.content[self.sigma[i]][:self.ad_len[i]]};\n"
+        for i, length in enumerate(self.ad_len):
+            if length > 0:
+                reply += f"{i + 1}.{self.content[self.sigma[i]][:length]};\n"
         self.compressed_ad = reply
         return self.compressed_ad
 
     def ad_gen_chinese_SQA(self):
         reply = self.basic_reply
-        for i in range(np.sum(np.array(self.ad_len) > 10)):
-            reply += f"{self.content[self.sigma[i]][:self.ad_len[i]]}"
+        for i, length in enumerate(self.ad_len):
+            if length > 0:
+                reply += self.content[self.sigma[i]][:length]
         self.compressed_ad = reply
         return self.compressed_ad
 
     def ad_gen_english_GA(self):
         reply = ""
-        for i in range(np.sum(np.array(self.ad_len) > 10)):
-            words = self.content[self.sigma[i]].replace('\n', ' ').split()  # 按空格和换行符分割为单词
-            truncated_content = ' '.join(words[:self.ad_len[i]])  # 按单词数限制
-            reply += f"{i + 1}. {truncated_content};\n"
+        for i, length in enumerate(self.ad_len):
+            if length > 0:
+                reply += f"{i + 1}. {self.content[self.sigma[i]][:length]};\n"
         self.compressed_ad = reply
         return self.compressed_ad
 
     def ad_gen_english_SQA(self):
         reply = self.basic_reply
-        for i in range(np.sum(np.array(self.ad_len) > 10)):
-            words = self.content[self.sigma[i]].replace('\n', ' ').split()  # 按空格和换行符分割为单词
-            truncated_content = ' '.join(words[:self.ad_len[i]])  # 按单词数限制
-            reply += f"{truncated_content} "
+        for i, length in enumerate(self.ad_len):
+            if length > 0:
+                reply += f"{self.content[self.sigma[i]][:length]} "
         self.compressed_ad = reply
         return self.compressed_ad
 
     def satisfaction(self):
         """
-        Evaluates user satisfaction and advertisement satisfaction based on similarity and utility metrics.
+        Computes text-similarity satisfaction proxies and combines them with social welfare.
         """
         def truncate_text(text, max_words):
             words = text.replace('\n', ' ').split()
             return ' '.join(words[:max_words]) if len(words) > max_words else ' '.join(words)
 
+        words2 = truncate_text(self.compressed_ad, max_words=50)
         ad_satis_k = np.zeros(self.q)
         for k in range(self.q):
             if self.ad_len[k] > 5:
                 words1 = truncate_text(self.content[self.sigma[k]], max_words=50)
-                words2 = truncate_text(self.compressed_ad, max_words=50)
                 ad_satis_k[k] = sim(words1, words2)
-            else:
-                ad_satis_k[k] = 0
 
-        self.user_satis = sim(truncate_text(self.basic_reply,50), words2)
+        self.user_satis = sim(truncate_text(self.basic_reply, 50), words2)
 
         self.ad_satis = np.mean(ad_satis_k)
         self.score = self.theta_1 * self.user_satis + (1 - self.theta_1) * self.ad_satis + self.theta_2 * self.SW
@@ -315,11 +320,14 @@ class Base_LLM(object):
         self.sigma, self.prom, self.payments, self.utilities, self.SW = self.auc_alg(self.b, self.pctr, self.pos_norm,
                                                                                      self.q, self.constant, len_content,
                                                                                      self.max_len)
-        self.ad_len = [int(self.max_len * p) for p in self.prom]
+        if self.auc_alg in (GA, GSP_SQA):
+            self.ad_len = [round(self.max_len * p) for p in self.prom]
+        else:
+            self.ad_len = [int(self.max_len * p) for p in self.prom]
 
     def auction_DSIC(self, beta, s):
         """
-        Executes a DSIC-compliant auction where one advertiser misreports their preferences.
+        Runs a bid-misreporting experiment for the fixed advertiser index s.
         """
         len_content = [len(ads) for ads in self.content]
         self.sigma, self.prom, self.payments, self.utilities, self.SW = self.auc_alg(self.b, self.pctr, self.pos_norm,

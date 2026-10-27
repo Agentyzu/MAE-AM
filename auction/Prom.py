@@ -4,6 +4,7 @@ import numpy as np
 def Prom(b, pctr, pos_norm, q, constant, len_content, max_len):
     """
     Implements a prominence-based allocation mechanism for ads.
+    Zero total slot weight yields no allocation. An absent competitor yields zero payment.
 
     Parameters:
     -----------
@@ -48,30 +49,27 @@ def Prom(b, pctr, pos_norm, q, constant, len_content, max_len):
     for k in range(q):
         ecpm_k[k] = b[sigma[k]] * pctr[sigma[k]] * pos_norm[k]
 
-    # Calculate prominence values based on normalized eCPM
-    for k in range(q):
-        Prom[k] = ecpm_k[k] / np.sum(ecpm_k)
-
-    # Initialize payments array
     payments = np.zeros(q)
-
-    # Calculate payments based on the prominence allocation
-    if q == 1:
-        # Single ad case: pay the eCPM of the next highest ad (edge case)
-        payments[0] = ecpm[sigma[1]]
-    else:
-        for k in range(q):
-            # Calculate the payment using the prominence-based formula
-            w_minus_i = np.sum(ecpm_k) - ecpm_k[k]
-            t = ecpm_k[k] / w_minus_i
-            payments[k] = (w_minus_i / (pctr[sigma[k]] * pos_norm[k])) * (np.log(1 + t) - t / (1 + t))
-
-    # Calculate utilities for each ad
     utilities = np.zeros(q)
+    total_ecpm = np.sum(ecpm_k)
+    if total_ecpm == 0:
+        return sigma, Prom, payments, utilities, 0.0
+    Prom = ecpm_k / total_ecpm
+
+    if q == 1:
+        if len(sigma) > 1:
+            payments[0] = ecpm[sigma[1]]
+    else:
+        for k in np.flatnonzero(Prom > 0):
+            w_minus_i = np.sum(ecpm_k[:k]) + np.sum(ecpm_k[k + 1:])
+            if w_minus_i > 0:
+                t = ecpm_k[k] / w_minus_i
+                payments[k] = (w_minus_i / (pctr[sigma[k]] * pos_norm[k])) * (np.log1p(t) - t / (1 + t))
+
     for k in range(q):
         utilities[k] = b[sigma[k]] * Prom[k] - payments[k]
 
-    # Calculate social welfare using normalized eCPM and prominence values
-    SW = np.sum(ecpm_k * (np.log(ecpm_k / np.sum(ecpm_k)) + constant))
+    allocated = Prom > 0
+    SW = np.sum(ecpm_k[allocated] * (np.log(Prom[allocated]) + constant))
 
     return sigma, Prom, payments, utilities, SW

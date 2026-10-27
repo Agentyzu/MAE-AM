@@ -1,10 +1,13 @@
 from utils.base_llm import Base_LLM
 from openai import OpenAI
+from utils.api_config import require_env, request_timeout
 
 
 class claude(Base_LLM):
     def __init__(self, config, data, auc_alg):
         super(claude, self).__init__(config, data, auc_alg)
+        api_key, base_url, self.model = require_env('CLAUDE_API_KEY', 'CLAUDE_BASE_URL', 'CLAUDE_MODEL')
+        self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=request_timeout(), max_retries=0)
 
     def reply(self, query):
         self.messages.append({
@@ -12,12 +15,8 @@ class claude(Base_LLM):
             "content": query
         })
 
-        api_key = ""
-        api_base = "https://sg.uiuiapi.com/v1"
-        client = OpenAI(api_key=api_key, base_url=api_base)
-
-        completion = client.chat.completions.create(
-            model="claude-3-haiku-20240307",
+        completion = self.client.chat.completions.create(
+            model=self.model,
             messages=self.messages
         )
 

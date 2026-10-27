@@ -30,9 +30,9 @@ def GSP_SQA(b, pctr, pos_norm, q, constant, len_content, max_len):
         - Prom : np.ndarray
             Prominence values for each ad slot based on content length and slot adjustments.
         - payments : np.ndarray
-            Payment amount for each ad.
+            Slot-aligned payments, with zero for unallocated slots.
         - utilities : np.ndarray
-            Utility for each allocated ad.
+            Slot-aligned utilities, with zero for unallocated slots.
         - SW : float
             Social welfare value for the given allocation.
     """
@@ -44,36 +44,17 @@ def GSP_SQA(b, pctr, pos_norm, q, constant, len_content, max_len):
     Prom = np.zeros(q)
     ecpm_k = np.zeros(q)
 
-    # Calculate prominence (Prom) based on ad content length
-    for k in range(q):
-        ecpm_k[k] = b[sigma[k]] * pctr[sigma[k]] * pos_norm[k]
-        if k == 0:
-            # Prominence for the first slot is proportional to content length, capped at 1
-            Prom[k] = len_content[sigma[k]] / max_len
-            Prom[k] = min(Prom[k], 1)  # Ensure Prom[k] does not exceed 1
-        else:
-            # Minimum prominence for subsequent slots
-            Prom[k] = 0.01
+    if q > 0 and max_len > 0:
+        Prom[0] = min(len_content[sigma[0]] / max_len, 1)
 
-    # Calculate payments for each ad
+    allocated = np.flatnonzero(Prom > 0)
     payments = np.zeros(q)
-    for k in range(q):
-        if k == 0:
-            # First slot pays the eCPM of the next highest ad
-            payments[k] = ecpm[sigma[k + 1]]
-        else:
-            # Subsequent slots have zero payment
-            payments[k] = 0
-
-    # Calculate utilities and social welfare
     utilities = np.zeros(q)
-    SW = 0
-
-    for k in range(q):
-        # Utility = bid value * prominence - payment
+    for k in allocated:
+        ecpm_k[k] = ecpm[sigma[k]] * pos_norm[k]
+        if k + 1 < len(sigma):
+            payments[k] = ecpm[sigma[k + 1]]
         utilities[k] = b[sigma[k]] * Prom[k] - payments[k]
-        if Prom[k] != 0.01:
-            # Include in social welfare calculation only if prominence is above the minimum
-            SW += b[sigma[k]] * pctr[sigma[k]] * pos_norm[k] * (np.log(Prom[k]) + constant)
+    SW = np.sum(ecpm_k[allocated] * (np.log(Prom[allocated]) + constant))
 
     return sigma, Prom, payments, utilities, SW

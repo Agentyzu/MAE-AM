@@ -1,10 +1,10 @@
 import numpy as np
-import copy
 
 
 def Prom_DSIC(b, pctr, pos_norm, q, constant, len_content, max_len, beta, s):
     """
-    Implements a prominence-based auction mechanism with dominant strategy incentive compatibility (DSIC).
+    Tests bid misreporting in the prominence-based auction; values in b remain truthful.
+    Zero reported slot weight yields no allocation. An absent competitor yields zero payment.
 
     Parameters:
     -----------
@@ -25,7 +25,7 @@ def Prom_DSIC(b, pctr, pos_norm, q, constant, len_content, max_len, beta, s):
     beta : float
         Bid adjustment factor for testing DSIC (dominant strategy incentive compatibility).
     s : int
-        Index of the advertiser whose bid is adjusted by `beta`.
+        Fixed advertiser index in the input arrays, not a rank position; its bid is multiplied by beta.
 
     Returns:
     --------
@@ -41,13 +41,10 @@ def Prom_DSIC(b, pctr, pos_norm, q, constant, len_content, max_len, beta, s):
         - SW : float
             Social welfare value for the given allocation.
     """
-    # Calculate eCPM for each ad and sort indices in descending order
-    ecpm = b * pctr
+    b_hat = b.copy()
+    b_hat[s] = b[s] * beta
+    ecpm = b_hat * pctr
     sigma = np.argsort(-ecpm)
-
-    # Adjust bids for advertiser `s` by factor `beta`
-    b_hat = copy.deepcopy(b)
-    b_hat[sigma[s]] = b[sigma[s]] * beta
 
     # Initialize prominence and normalized eCPM for q slots
     Prom = np.zeros(q)
@@ -57,31 +54,28 @@ def Prom_DSIC(b, pctr, pos_norm, q, constant, len_content, max_len, beta, s):
     for k in range(q):
         ecpm_k[k] = b_hat[sigma[k]] * pctr[sigma[k]] * pos_norm[k]
 
-    # Calculate prominence values based on normalized eCPM
-    for k in range(q):
-        Prom[k] = ecpm_k[k] / np.sum(ecpm_k)
-
-    # Initialize payments array
     payments = np.zeros(q)
-
-    # Calculate payments based on the prominence allocation
-    if q == 1:
-        # Single ad case: pay the eCPM of the next highest ad (edge case)
-        payments[0] = ecpm[sigma[1]]
-    else:
-        for k in range(q):
-            # Calculate the payment using the prominence-based formula
-            w_minus_i = np.sum(ecpm_k) - ecpm_k[k]
-            t = ecpm_k[k] / w_minus_i
-            payments[k] = (w_minus_i / (pctr[sigma[k]] * pos_norm[k])) * (np.log(1 + t) - t / (1 + t))
-
-    # Calculate utilities for each ad
     utilities = np.zeros(q)
+    total_ecpm = np.sum(ecpm_k)
+    if total_ecpm == 0:
+        return sigma, Prom, payments, utilities, 0.0
+    Prom = ecpm_k / total_ecpm
+
+    if q == 1:
+        if len(sigma) > 1:
+            payments[0] = ecpm[sigma[1]]
+    else:
+        for k in np.flatnonzero(Prom > 0):
+            w_minus_i = np.sum(ecpm_k[:k]) + np.sum(ecpm_k[k + 1:])
+            if w_minus_i > 0:
+                t = ecpm_k[k] / w_minus_i
+                payments[k] = (w_minus_i / (pctr[sigma[k]] * pos_norm[k])) * (np.log1p(t) - t / (1 + t))
+
     for k in range(q):
-        # Utility = bid value * prominence - payment
         utilities[k] = b[sigma[k]] * Prom[k] - payments[k]
 
-    # Calculate social welfare using normalized eCPM and prominence values
-    SW = np.sum(ecpm_k * (np.log(ecpm_k / np.sum(ecpm_k)) + constant))
+    true_ecpm_k = b[sigma[:q]] * np.asarray(pctr)[sigma[:q]] * np.asarray(pos_norm)[:q]
+    allocated = Prom > 0
+    SW = np.sum(true_ecpm_k[allocated] * (np.log(Prom[allocated]) + constant))
 
     return sigma, Prom, payments, utilities, SW

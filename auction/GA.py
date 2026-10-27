@@ -30,9 +30,9 @@ def GA(b, pctr, pos_norm, q, constant, len_content, max_len):
         - Prom : np.ndarray
             Normalized allocations (prominence) for each ad slot.
         - payments : np.ndarray
-            Payment amount for each allocated ad.
+            Slot-aligned payments, with zero for unallocated slots.
         - utilities : np.ndarray
-            Utility for each allocated ad.
+            Slot-aligned utilities, with zero for unallocated slots.
         - SW : float
             Social welfare value for the given allocation.
     """
@@ -57,35 +57,25 @@ def GA(b, pctr, pos_norm, q, constant, len_content, max_len):
             alloc_len = min(ad_len, remaining_len)  # Allocate as much as possible within the remaining space
             Prom[k] = alloc_len / max_len          # Normalize allocation
             remaining_len -= alloc_len
+
+    allocated = np.flatnonzero(Prom > 0)
+    payments = np.zeros(q)
+    total_ecpm = np.sum(ecpm_k[allocated])
+    for k in allocated:
+        if len(allocated) == 1:
+            if k + 1 < len(sigma):
+                payments[k] = ecpm[sigma[k + 1]]
         else:
-            Prom[k] = 0.01                         # Minimum prominence value
+            w_minus_i = total_ecpm - ecpm_k[k]
+            if ecpm_k[k] > 0 and w_minus_i > 0:
+                t = ecpm_k[k] / w_minus_i
+                payments[k] = (w_minus_i / (pctr[sigma[k]] * pos_norm[k])) * (
+                    np.log(1 + t) - t / (1 + t)
+                )
 
-    # Calculate payments for allocated ads
-    num_allocated_ads = np.sum(Prom > 0.01)       # Count ads with non-minimum prominence
-    payments = np.zeros(num_allocated_ads)
-
-    if num_allocated_ads == 1:
-        # Special case: only one ad allocated
-        payments[0] = ecpm[sigma[1]]
-    else:
-        # Calculate payment for each allocated ad
-        for k in range(num_allocated_ads):
-            w_minus_i = np.sum(ecpm_k) - ecpm_k[k]  # Total eCPM excluding the current ad
-            t = ecpm_k[k] / w_minus_i               # Ratio for payment calculation
-            payments[k] = (w_minus_i / (pctr[sigma[k]] * pos_norm[k])) * (
-                np.log(1 + t) - t / (1 + t)
-            )
-
-    # Calculate utilities and social welfare
-    utilities = np.zeros(num_allocated_ads)
-    SW = 0
-
-    for k in range(num_allocated_ads):
-        # Utility = bid value * prominence - payment
+    utilities = np.zeros(q)
+    for k in allocated:
         utilities[k] = b[sigma[k]] * Prom[k] - payments[k]
-
-    for k in range(q):
-        if Prom[k] != 0.01:  # Only consider allocated ads for social welfare
-            SW += b[sigma[k]] * pctr[sigma[k]] * pos_norm[k] * (np.log(Prom[k]) + constant)
+    SW = np.sum(ecpm_k[allocated] * (np.log(Prom[allocated]) + constant))
 
     return sigma, Prom, payments, utilities, SW
