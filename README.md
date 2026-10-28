@@ -16,63 +16,59 @@ The framework connects auction-based allocation with response generation, enabli
 ### 1. Install dependencies
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-experiments.txt -r requirements-backbones.txt -r requirements-scoring.txt
 ```
 
 ### 2. Configure
 
-Set environment variables for the adapters you enable; no credentials or private endpoints are included.
+Set environment variables for the adapters you enable.
 
-| Adapter / service | Environment variables |
+| Adapter | API key environment variable |
 | --- | --- |
-| OpenAI-compatible adapters | `<PREFIX>_API_KEY`, `<PREFIX>_BASE_URL`, `<PREFIX>_MODEL`; prefix: `QWEN`, `CHATGPT`, `CLAUDE`, `KIMI`, or `BEING` |
-| GLM | `GLM_API_KEY`, `GLM_MODEL`; optional `GLM_BASE_URL` |
-| ERNIE | `QIANFAN_ACCESS_KEY`, `QIANFAN_SECRET_KEY`, `ERNIE_MODEL` |
-| Similarity | `SIMILARITY_API_KEY`, `SIMILARITY_SECRET_KEY`, `SIMILARITY_AUTH_URL`, `SIMILARITY_URL` |
+| ChatGPT | `OPENAI_API_KEY` |
+| claude | `CLAUDE_API_KEY` |
+| kimi | `MOONSHOT_API_KEY` |
+| GLM | `ZHIPUAI_API_KEY` |
+| ernie | `QIANFAN_API_KEY` |
+| Qwen | `DASHSCOPE_API_KEY` |
 
-`SIMILARITY_URL` is the complete similarity endpoint, without an access token. `API_TIMEOUT_SECONDS` defaults to 60. Keep credentials out of version control.
+Model IDs and endpoints can be configured with `MAE_AM_<ADAPTER_UPPERCASE>_MODEL_ID` and `MAE_AM_<ADAPTER_UPPERCASE>_BASE_URL`. Claude requires an explicit Claude 4 model ID and an OpenAI-compatible endpoint providing it. Qwen requires an explicit Qwen3 model ID. Supported IDs are defined in `utils/backbones.py`.
 
-Edit queries and budgets in `cfgs/`. Data splits belong under `dataset/<DATASET>/<CATEGORY>/`. Language and the `content` / `ad_copy` field are selected automatically.
+LERA additionally requires an SGLang service configured through `MAE_AM_LERA_BASE_URL` and `MAE_AM_LERA_MODEL_ID`. Set `MAE_AM_LERA_API_KEY` if the service requires authentication. Semantic scoring uses BGE-M3 locally.
+
+Edit queries and budgets in `cfgs/`. Dataset links, input locations, and schemas are listed in [dataset/DOWNLOAD.txt](dataset/DOWNLOAD.txt). ADGEN uses preprocessed JSON files under `dataset/ADGEN/{jacket,skirt,trousers}/`. ATVI reads `dataset/ATVI/ad_data.xlsx`. ADGEN lengths are counted in characters and ATVI lengths in whitespace-separated words.
 
 ### 3. Run experiments
 
-From the repository root:
-
 ```bash
-python run_experiment.py --dataset ADGEN --auction Prom
-python run_experiment.py --dataset ATVI --auction Prom
+python run_paired_experiments.py prepare --output outputs/paper --profile paper
+python run_paired_experiments.py run --manifest outputs/paper/manifest.json
 ```
 
-Auctions: `Prom`, `GSP`, `GA`, `SQA`, `ALS`, `AAL`, `Prom_DSIC`. By default, all available configured categories and splits are run. To reproduce a subset, specify it explicitly:
+The paper profile uses six candidate models, enumerative format, 20 advertisers per instance, and five repetitions. LLM-based methods generate five candidates per model. GA directly inserts source-advertisement prefixes. Each model is scored by its candidate mean, and the selected model supplies its best sample.
 
-```bash
-python run_experiment.py --dataset ADGEN --auction Prom --categories jacket --sections 1 --models Qwen --seed 0
-```
-
-Use `--data-dir` and `--output-dir` for custom directories; `--language` and `--content-field` override automatic selection. Existing module commands under `run_ADGEN/` and `run_ATVI/` accept the same options. Run `python run_experiment.py --help` for details.
+Methods (CLI names): `Prom` (MAE-AM), `GSP`, `GA`, `ALS`, `AAL`, `SQA`, `PA-AIGC`, `LERA`. To select categories, add e.g. `--categories ADGEN/jacket ATVI/Food` to `prepare`. To run selected methods, add e.g. `--methods Prom GSP GA` to `run` and use the same selection for aggregation. Use a new output directory for a different configuration.
 
 ### 4. Aggregate results
 
-JSON results are saved to `results/<DATASET>/<AUCTION>/<SPLIT>/` with configuration and bids (`ALS` → `Prom_ALS`, `AAL` → `Prom_AAL`, `SQA` → `GSP_SQA`). Aggregation accepts the same auction names and exports per-split metrics, means, variances, and counts:
+JSON results are saved beneath the output directory in `result_<MECHANISM>/<INSTANCE_ID>/` (`ALS` → `Prom_ALS`, `AAL` → `Prom_AAL`, `SQA` → `GSP_SQA`, `PA-AIGC` → `PA_AIGC`).
 
 ```bash
-python -m utils.data_process --dataset ADGEN --auction Prom
-python -B test_regressions.py
+python run_paired_experiments.py aggregate --manifest outputs/paper/manifest.json
 ```
 
-DSIC tables also report `advertiser_utility`, `truthful_utility` (the same advertiser at `beta=1`), and `utility_gain`; unselected advertisers have zero utility. A positive gain indicates a profitable deviation for that sample, not a proof of incentive compatibility.
+Aggregation writes `summary.json` and `length_summary.json` beside the manifest. Economic and semantic metrics are averaged within each repetition and then arithmetically across the five repetitions. Dataset-specific results are under `per_dataset`. Length statistics report Bias, MAE, pooled NMAE, and Pearson correlation from recorded advertisement spans.
 
-Use `--results-dir` and `--output` to customize aggregation paths. Offline checks use Python 3.13.13; live provider calls and a clean installation of all SDKs have not been verified. A fixed seed controls local sampling, not provider-side generation.
+A fixed seed controls local sampling, not provider-side generation.
 
 ## 📚 Citation
 
 If you use this work, please cite:
 
 ```bibtex
-@inproceedings{anonymous2027oneanswer,
-  title     = {One Answer, Multiple Ads: Auction-Guided Advertising in {LLM} Responses},
-  author    = {Anonymous},
-  booktitle = {Proceedings of the ACM Web Conference 2027 (WWW '27)},
-  year      = {2027}
+@unpublished{anonymous2027oneanswer,
+  title  = {One Answer, Multiple Ads: Auction-Guided Advertising in {LLM} Responses},
+  author = {Anonymous},
+  note   = {Under review at The ACM Web Conference 2027 (WWW '27)}
 }
 ```

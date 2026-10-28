@@ -1,13 +1,10 @@
 from utils.base_llm import Base_LLM
 from openai import OpenAI
-from utils.api_config import require_env, request_timeout
 
 
 class being(Base_LLM):
     def __init__(self, config, data, auc_alg):
         super(being, self).__init__(config, data, auc_alg)
-        api_key, base_url, self.model = require_env('BEING_API_KEY', 'BEING_BASE_URL', 'BEING_MODEL')
-        self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=request_timeout(), max_retries=0)
 
     def reply(self, query):
         self.messages.append({
@@ -15,8 +12,12 @@ class being(Base_LLM):
             "content": query
         })
 
-        completion = self.client.chat.completions.create(
-            model=self.model,
+        api_key = ""
+        api_base = ""
+        client = OpenAI(api_key=api_key, base_url=api_base)
+
+        completion = client.chat.completions.create(
+            model="bing-Balanced",
             messages=self.messages
         )
 

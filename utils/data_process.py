@@ -1,77 +1,105 @@
 import argparse
 import json
-from pathlib import Path
-
+import os
 import pandas as pd
 
+name = ['jacket', 'skirt', 'trousers']
 
-ROOT = Path(__file__).resolve().parents[1]
-METRICS = ['ad_sw', 'ad_rev_sum', 'ad_utility_sum', 'user_satis', 'ad_satis', 'score',
-           'advertiser_utility', 'truthful_utility', 'utility_gain']
+baselines = ['Prom']
+llms = ['ChatGPT', 'claude', 'ernie', 'GLM', 'kimi', 'Qwen']
 
-
-def collect_results(source):
-    rows = []
-    for path in sorted(source.rglob('*_results_*.json')):
-        with path.open(encoding='utf-8') as file:
-            result = json.load(file)
-        suffixes = [''] if 'ad_sw' in result else [key[len('ad_sw'):] for key in result if key.startswith('ad_sw_')]
-        if not suffixes:
-            raise ValueError(f'No auction metrics found: {path}')
-        file_rows = []
-        for suffix in suffixes:
-            row = {'auction': path.parent.parent.name, 'split': path.parent.name,
-                   'model': path.name.split('_results_', 1)[0], 'beta': None, 'advertiser': None,
-                   'advertiser_utility': None, 'truthful_utility': None, 'utility_gain': None}
-            utilities = result[f'ad_utility{suffix}']
-            if suffix:
-                beta, advertiser = suffix[1:].rsplit('_', 1)
-                advertiser = int(advertiser)
-                rank = result[f'ad_rank{suffix}'][:len(utilities)]
-                row.update(beta=float(beta), advertiser=advertiser,
-                           advertiser_utility=utilities[rank.index(advertiser)] if advertiser in rank else 0.0)
-            row['ad_sw'] = result[f'ad_sw{suffix}']
-            row['ad_rev_sum'] = sum(result[f'ad_rev{suffix}'])
-            row['ad_utility_sum'] = sum(utilities)
-            for metric in ('user_satis', 'ad_satis', 'score'):
-                row[metric] = result.get(metric)
-            file_rows.append(row)
-        truthful = {row['advertiser']: row['advertiser_utility'] for row in file_rows if row['beta'] == 1}
-        for row in file_rows:
-            if row['beta'] is not None:
-                if row['advertiser'] not in truthful:
-                    raise ValueError(f"Missing beta=1 baseline for advertiser {row['advertiser']}: {path}")
-                row['truthful_utility'] = truthful[row['advertiser']]
-                row['utility_gain'] = row['advertiser_utility'] - row['truthful_utility']
-        rows.extend(file_rows)
-    if not rows:
-        raise ValueError(f'No experiment result JSON files found under {source}')
-    return pd.DataFrame(rows)
-
-
-def main(argv=None):
-    parser = argparse.ArgumentParser(description='Aggregate experiment results and export Excel tables')
-    parser.add_argument('--results-dir', type=Path, default=ROOT / 'results')
-    parser.add_argument('--dataset', choices=('ADGEN', 'ATVI'), default='ADGEN')
-    parser.add_argument('--auction', help='Auction name used by run_experiment.py, or its result directory name')
-    parser.add_argument('--output', type=Path, help='Output Excel file')
-    args = parser.parse_args(argv)
-    source = args.results_dir.resolve() / args.dataset
-    if args.auction:
-        source /= {'ALS': 'Prom_ALS', 'AAL': 'Prom_AAL', 'SQA': 'GSP_SQA'}.get(args.auction, args.auction)
-    if not source.is_dir():
-        parser.error(f'Result directory does not exist: {source}')
-    table = collect_results(source)
-    grouped = table.groupby(['auction', 'model', 'beta', 'advertiser'], dropna=False)[METRICS]
-    output = args.output or source / 'summary.xlsx'
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with pd.ExcelWriter(output, engine='openpyxl') as writer:
-        table.to_excel(writer, sheet_name='per_split', index=False)
-        grouped.mean().reset_index().to_excel(writer, sheet_name='mean', index=False)
-        grouped.var().reset_index().to_excel(writer, sheet_name='variance', index=False)
-        grouped.count().reset_index().to_excel(writer, sheet_name='count', index=False)
-    print(f'Saved {len(table)} result row(s): {output.resolve()}')
-
-
+result_root = os.environ.get('MAE_AM_RESULT_ROOT', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sections = 10
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--result-root', default=result_root, help='Directory containing result_<baseline> folders')
+    parser.add_argument('--categories', nargs='+', default=name)
+    parser.add_argument('--baselines', nargs='+', default=baselines)
+    parser.add_argument('--models', nargs='+', default=llms)
+    parser.add_argument('--sections', type=int, default=sections)
+    args = parser.parse_args()
+    if args.sections < 1:
+        parser.error('--sections must be positive')
+    result_root, name, baselines, llms, sections = (
+        args.result_root, args.categories, args.baselines, args.models, args.sections)
+result_root = os.path.abspath(os.path.expanduser(result_root))
+
+for baseline in baselines:
+    processed_tables = []
+    missing_groups = []
+    incomplete_groups = []
+    for i in range(sections):
+        for j in range(len(name)):
+            group = f'{name[j]}_section{i + 1}'
+            output_dir = os.path.join(result_root, f'result_{baseline}', group)
+            ad_sw, ad_rev, ad_utility, user_satis, ad_satis, score, model_mean_scores = [[] for _ in range(7)]
+            llm_ls = []
+            candidate_order = []
+            for llm in llms:
+                file_path = os.path.join(output_dir, f'{llm}_results_{group}.json')
+                if os.path.exists(file_path):
+                    llm_ls.append(llm)
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        data = json.load(file)
+                        model_mean_scores.append(data.get('mean_score', data['score']))
+                        declared = data.get('candidate_models', [])
+                        if declared:
+                            if candidate_order and declared != candidate_order:
+                                raise ValueError(f'Inconsistent candidate model order: {file_path}')
+                            candidate_order = declared
+                        if 'samples' in data:
+                            data = {**data, **data['samples'][data['best_sample_index']]}
+                        ad_sw.append(data['ad_sw'])
+                        ad_rev.append(sum(data['ad_rev']))
+                        ad_utility.append(sum(data['ad_utility']))
+                        user_satis.append(data['user_satis'])
+                        ad_satis.append(data['ad_satis'])
+                        score.append(data['score'])
+
+            if not llm_ls:
+                missing_groups.append(group)
+                continue
+            missing_models = [m for m in (candidate_order or llms) if m not in llm_ls]
+            if missing_models:
+                incomplete_groups.append((group, missing_models))
+                print(f'Skip {baseline}/{group}: missing model logs {missing_models}')
+                continue
+            if os.path.exists(output_dir):
+                table_data = {
+                    "ad_sw": ad_sw,
+                    "ad_rev_sum": ad_rev,
+                    "ad_utility_sum": ad_utility,
+                    "user_satis": user_satis,
+                    "ad_satis": ad_satis,
+                    "score": score,
+                    "model_mean_score": model_mean_scores
+                }
+                df = pd.DataFrame(table_data, index=llm_ls).transpose()
+                selection_order = [m for m in candidate_order if m in llm_ls] or llm_ls
+                max_score_col = max(selection_order, key=lambda m: df.loc['model_mean_score', m])
+                df['max_score'] = df[max_score_col]
+
+
+
+                output_file = os.path.join(output_dir, f'{name[j]}_section{i + 1}_table.xlsx')
+                df.to_excel(output_file, index=True)
+                processed_tables.append(output_file)
+
+    all_means = []
+    for table_path in processed_tables:
+        df = pd.read_excel(table_path, index_col=0)
+        last_column_means = df.iloc[:, -1]
+        all_means.append(last_column_means)
+
+    df_means = pd.DataFrame(all_means)
+    final_mean = df_means.mean()
+    final_var = df_means.var()
+    print(f'{baseline}: {len(processed_tables)}/{len(name) * sections} groups summarized; '
+          f'{len(missing_groups)} without logs, {len(incomplete_groups)} incomplete.')
+    if processed_tables:
+        print('Mean over summarized groups:')
+        print(final_mean.to_string())
+        print('Sample variance over summarized groups:')
+        print(final_var.to_string())
+    else:
+        print('No usable model logs; no summary statistics produced.')

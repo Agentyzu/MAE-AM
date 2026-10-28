@@ -1,5 +1,25 @@
-from run_experiment import main
+import os
+import json
+from model_zoo.model_zoo_ALS import ModelZoo_ALS
+import importlib
 
+source_dir = os.path.join("dataset", "ATVI")
+type_names = [name for name in os.listdir(source_dir) if os.path.isdir(os.path.join(source_dir, name))]
 
-if __name__ == "__main__":
-    main(dataset="ATVI", auction="ALS")
+config_map = {}
+for name in type_names:
+    config_module = importlib.import_module(f"cfgs.ATVI_ALS_configs.config_{name}_ALS")
+    config_map[name] = config_module.cfg
+    config_map[name].dataset = "ATVI"
+
+for i in range(1, 10):
+    for j in range(len(type_names)):
+        file_path = f'dataset/ATVI/{type_names[j]}/{type_names[j]}_section{i}.json'
+        if os.path.exists(file_path):
+            with open(file_path, 'r', encoding='utf-8') as file:
+                data = json.load(file)
+
+            cfg = config_map[type_names[j]]
+            data_name = f"{type_names[j]}_section{i}"
+            model_zoo = ModelZoo_ALS(cfg, data, data_name)
+            model_zoo.run_all_models()

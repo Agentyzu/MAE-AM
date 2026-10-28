@@ -1,0 +1,19 @@
+ADGEN
+Original dataset and download instructions:
+https://github.com/ZhihongShao/Planning-based-Hierarchical-Variational-Model
+Download:
+https://drive.google.com/open?id=1vB0fT1ex2Tsid-i5s-jqdz9QUFbCh0CO
+Processed content/summary release:
+https://github.com/zai-org/ChatGLM-6B/blob/main/ptuning/README.md
+
+ATVI (Advertisement Transcripts from Various Industries)
+https://www.kaggle.com/datasets/kevinhartman0/advertisement-transcripts-from-various-industries/data
+
+Input locations (relative to the repository root):
+ADGEN: dataset/ADGEN/{jacket,skirt,trousers}/*_section*.json
+ATVI: dataset/ATVI/ad_data.xlsx
+
+ADGEN experiment inputs are preprocessed JSON arrays. Each record contains
+ad_id, ad_name, pctr, and content (or ad_copy). Raw ADGEN files must be
+preprocessed into this layout before running the experiments.
+ATVI workbook columns: Category, Advertiser, Ad_copy.
